@@ -32,7 +32,7 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
                 self.layer.borderColor = adpterBorderColor.CGColor;
                 
             }
-            if (self.layer.backgroundColor) {
+            if (self.layerBackgroundColorHex) {
                 UIColor *layerBackgroundColor = [UIColor ColorAdpterWithHex:self.layerBackgroundColorHex];
                 self.layer.backgroundColor = layerBackgroundColor.CGColor;
             }
