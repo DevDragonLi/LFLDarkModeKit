@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// config view layerBorderColor With Hex String 
 @property(nonatomic,copy)NSString *layerBorderColorHex;
 
+@property(nonatomic,copy)NSString *layerBackgroundColorHex;
+
 @end
 
 NS_ASSUME_NONNULL_END

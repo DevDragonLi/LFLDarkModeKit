@@ -1,18 +1,17 @@
 # LFLDarkModeKit
 
-[![CI Status](https://img.shields.io/travis/DevDragonli/LFLDarkModeKit.svg?style=flat)](https://travis-ci.org/DevDragonli/LFLDarkModeKit)
-[![Version](https://img.shields.io/cocoapods/v/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
-[![License](https://img.shields.io/cocoapods/l/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
-[![Platform](https://img.shields.io/cocoapods/p/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
+> 适配iOS13 暗黑模式组件
 
-> 适配暗黑模式组件，项目自定义色值即可使用。
+- **[组件使用指南](#use)** 
+- **[项目适配暗黑模式相关指南](#darkMode)** 
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the 
 Example directory first.
 
-### 使用指南
+
+## <a name="use"></a> 组件使用指南
 
 - 宿主工程目录下新建bundle（可参考此repo demo ）
 	- 一个项目自定义色值字符串对应二个颜色（dark和light对应的真实色值）一一对应，后续新增模式可扩展
@@ -52,9 +51,9 @@ pod 'LFLDarkModeKit'
 
 ```
 
-## 适配 iOS 13 暗黑模式
+## <a name="darkMode"></a> 适配 iOS 13 暗黑模式
 
-### 禁止暗黑模式，全局关闭暗黑模式
+### 全局关闭暗黑模式
 
 - 在Info.plist文件中，添加UIUserInterfaceStyle key 名字为 User Interface Style 值为String，将UIUserInterfaceStyle key 的值设置为Light
 
@@ -75,7 +74,10 @@ pod 'LFLDarkModeKit'
 
 ```
 ### CGColor 
+
 > 设置的CGColor并不会动态改变,可以通过以下方案处理
+
+> 如果适配CGColor，**一般需要各自自定义view实现此函数再处理，较为麻烦**。
 
 - 调用监听模式切换 : -(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection,对应视图处理相关逻辑
 

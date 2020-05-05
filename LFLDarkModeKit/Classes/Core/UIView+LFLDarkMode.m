@@ -12,6 +12,8 @@
 
 static void *layerBorderColorHexProperty = &layerBorderColorHexProperty;
 
+static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
+
 @implementation UIView (LFLDarkMode)
 
 + (void)load {
@@ -28,12 +30,21 @@ static void *layerBorderColorHexProperty = &layerBorderColorHexProperty;
             if (self.layer.borderWidth > 0) {
                 UIColor *adpterBorderColor = [UIColor ColorAdpterWithHex:self.layerBorderColorHex];
                 self.layer.borderColor = adpterBorderColor.CGColor;
-                // 刷新layer 不一定会调用layoutSubViews
-                [self.layer layoutIfNeeded];
+                
             }
+            if (self.layer.backgroundColor) {
+                UIColor *layerBackgroundColor = [UIColor ColorAdpterWithHex:self.layerBackgroundColorHex];
+                self.layer.backgroundColor = layerBackgroundColor.CGColor;
+            }
+            // 刷新layer 不一定会调用layoutSubViews
+            [self.layer layoutIfNeeded];
         }
     }
 }
+
+
+#pragma mark --------------------------------------------------------------------------------------
+
 
 - (NSString *)layerBorderColorHex {
     
@@ -50,6 +61,19 @@ static void *layerBorderColorHexProperty = &layerBorderColorHexProperty;
     objc_setAssociatedObject(self, layerBorderColorHexProperty, layerBorderColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
+- (NSString *)layerBackgroundColorHex {
+    
+    return objc_getAssociatedObject(self, layerBackgroundColorHexProperty);
+}
 
+- (void)setLayerBackgroundColorHex:(NSString *)layerBackgroundColorHex {
+    
+    if ([LFLDarkModeTool isBlankHexString:layerBackgroundColorHex]) {
+        return;
+    }
+    UIColor *layerBackgroundColor = [UIColor ColorAdpterWithHex:layerBackgroundColorHex];
+    self.layer.backgroundColor = layerBackgroundColor.CGColor;
+    objc_setAssociatedObject(self, layerBackgroundColorHexProperty, layerBackgroundColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 
 @end
