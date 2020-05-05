@@ -13,6 +13,8 @@ Example directory first.
 
 ## <a name="use"></a> 组件使用指南
 
+> 目前只适配项目使用Hex的色值体系
+
 - 宿主工程目录下新建bundle（可参考此repo demo ）
 	- 一个项目自定义色值字符串对应二个颜色（dark和light对应的真实色值）一一对应，后续新增模式可扩展
 	-  darkModeAdapterColor.bundle（内部名称为dark.plist和light.plist）
@@ -40,8 +42,6 @@ Example directory first.
 
 
 ## Installation
-
-> TODO 备注：当前组件暂未完善，故未同步至CocoaPods！！！
 
 LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
