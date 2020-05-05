@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dhc-DI-4OB">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="LFLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-fS-GxV">
+                                <rect key="frame" x="100" y="44" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="OsM-6z-QRf"/>
+                                    <constraint firstAttribute="height" constant="100" id="cnh-ah-sKM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="适配暗黑模式示例" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2m-v0-Bx7">
+                                <rect key="frame" x="114" y="308.5" width="147" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6cx-5x-RD2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p2m-v0-Bx7" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="0yn-0N-TiY"/>
+                            <constraint firstItem="rb3-fS-GxV" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="100" id="4Qp-EY-AKZ"/>
+                            <constraint firstItem="p2m-v0-Bx7" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="MbP-EM-r3E"/>
+                            <constraint firstItem="rb3-fS-GxV" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="Vny-Ma-erB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vzi-Dg-WiT"/>
+                    <connections>
+                        <outlet property="exampleImageView" destination="rb3-fS-GxV" id="1N4-xN-79R"/>
+                        <outlet property="exampleLabel" destination="p2m-v0-Bx7" id="y3F-kc-0om"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799.20000000000005" y="150.67466266866569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EQg-43-qju">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dhc-DI-4OB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="whl-d3-q9y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="zo2-sd-v6e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55i-rS-7DU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="150.67466266866569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="exampleImage" width="47.333332061767578" height="38.666667938232422"/>
+    </resources>
+</document>

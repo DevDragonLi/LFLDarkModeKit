@@ -1,0 +1,16 @@
+PODS:
+  - LFLDarkModeKit (0.1.0)
+
+DEPENDENCIES:
+  - LFLDarkModeKit (from `../`)
+
+EXTERNAL SOURCES:
+  LFLDarkModeKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LFLDarkModeKit: 344d774fa7b33103eb22ebfe036f00177adf9690
+
+PODFILE CHECKSUM: f76b517031b51af146ca8d0fb27ce89773321e18
+
+COCOAPODS: 1.7.5
