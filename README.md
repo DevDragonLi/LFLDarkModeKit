@@ -14,35 +14,36 @@ Example directory first.
 
 > now support Hex Color 
 
-- Project create bundle source （可参考此repo demo ）
-	- 项目**自定义色值字符串对应颜色**（例如Demo：@“DEMO”在dark和light分别对应不同的真实色值）一一对应，后续新增模式可扩展
-	-  darkModeAdapterColor.bundle（内部名称为dark.plist和light.plist）
-		- dark.plist
+- Project create bundle source 
+	- **完全各项目自定义色值字符串映射对应颜色**
+		- （Example：@“DEMO” 在dark和light分别对应不同的真实色值）一一映射，后续可支持新增模式
+	- Example：darkModeAdapterColor.bundle （Color Set ）
+		- dark.plist 
 		- light.plist
 
-- **初始化：** didFinishLaunchingWithOptions 初始化传入bundle名称，组件内部会解析
+- didFinishLaunchingWithOptions: configDarkModeColorBundleName 
 
-	```
-		- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+```
+	 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	    [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
-	    return YES;
-	}
+		    return YES;
+		}
 
-	```
+```
 
 - Example  
 
-	```
+``` 
 	// view
    self.exampleLabel.textColor = [UIColor ColorAdpterWithHex:@"DEMO"];
   
   	// Imageview 
-self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
+  self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
 
 	// Layer 
   self.customView.layerBorderColorHex = @"DEMO";
 	    
-	```
+```
 
 ## Installation
 
@@ -69,13 +70,13 @@ pod 'LFLDarkModeKit'
 
 - iOS13 API (当系统切换模式的时候，自动触发这两个方法来动态修改控件颜色)
 
-	```
+```
 
 	+ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchOS);
 
 	- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
 
-	```
+```
 
 ### CGColor 
 
@@ -85,27 +86,27 @@ pod 'LFLDarkModeKit'
 
 - -(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 
-	```
-		- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-	    [super traitCollectionDidChange:previousTraitCollection];
-	    
-	    if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
-	    // Config  Color Adapter 
-	    	}
-	    }
+```
+	- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
+    // Config  Color Adapter 
+    	}
+    }
 
-	```
+```
 - performAsCurrent
 	
-	```
-		- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-	    [super traitCollectionDidChange:previousTraitCollection];
-	     [self.traitCollection performAsCurrentTraitCollection:^{
-	        layer.backgroundColor = xxColor.CGColor;
-	    }];
-	}
+```
+	- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+     [self.traitCollection performAsCurrentTraitCollection:^{
+        layer.backgroundColor = xxColor.CGColor;
+    }];
+}
 	
-	```
+```
 
 ### VC Config Single Style 
  
@@ -125,56 +126,52 @@ pod 'LFLDarkModeKit'
 
 ### NSAttributedString
 
-	```
-		NSDictionary * attributeDic = @{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor xxColor]};
+```
+ NSDictionary * attributeDic = @{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor xxColor]};
 	
-	```
+```
 
 ### UIActivityIndicatorView
 
 
-	```
+```
 	typedef NS_ENUM(NSInteger, UIActivityIndicatorViewStyle) {
-
-	    UIActivityIndicatorViewStyleMedium,
 	
-	    UIActivityIndicatorViewStyleLarge,
+    UIActivityIndicatorViewStyleMedium,
 	
-	    UIActivityIndicatorViewStyleWhiteLarge API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleLarge",
+    UIActivityIndicatorViewStyleLarge,
 	
-	    UIActivityIndicatorViewStyleWhite API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleMedium",
+    UIActivityIndicatorViewStyleWhiteLarge API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleLarge",
 	
-	    UIActivityIndicatorViewStyleGray API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleMedium",
+    UIActivityIndicatorViewStyleWhite API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleMedium",
+	
+    UIActivityIndicatorViewStyleGray API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleMedium",
 	
 	};
 	
-	```
+```
 
 ### Life Style 
 
-```
-UIView
 
-traitCollectionDidChange(_:)
-layoutSubviews()
-draw(_:)
-updateConstraints()
-tintColorDidChange()
+- UIView
 
-UIViewController
+	- traitCollectionDidChange(_:)
+	- layoutSubviews()
+	- draw(_:)
+	- updateConstraints()
+	- tintColorDidChange()
 
-traitCollectionDidChange(_:)
-updateViewConstraints()
-viewWillLayoutSubviews()
-viewDidLayoutSubviews()
+- UIViewController
+	- traitCollectionDidChange(_:)
+	- updateViewConstraints()
+	- viewWillLayoutSubviews()
+	- viewDidLayoutSubviews()
 
-UIPresentationController
-
-traitCollectionDidChange(_:)
-containerViewWillLayoutSubviews()
-containerViewDidLayoutSubviews()
-
-```
+- UIPresentationController
+	- traitCollectionDidChange(_:)
+	- containerViewWillLayoutSubviews()
+	- containerViewDidLayoutSubviews()
 
 ## Author
 
