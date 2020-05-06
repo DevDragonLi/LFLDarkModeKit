@@ -10,7 +10,6 @@
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		D826475F24613837003CE72C /* LFLCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = D826475E24613836003CE72C /* LFLCustomView.m */; };
 		D8461465246145F600C41133 /* darkModeAdapterColor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8461464246145F500C41133 /* darkModeAdapterColor.bundle */; };
 		D8F5158124602D1F007424F6 /* LFLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F5157424602D1F007424F6 /* LFLAppDelegate.m */; };
 		D8F5158224602D1F007424F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F5157524602D1F007424F6 /* LaunchScreen.storyboard */; };
@@ -33,8 +32,6 @@
 		955B80A7EDF7CE0DD7B3D999 /* Pods-LFLDarkModeKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LFLDarkModeKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-LFLDarkModeKit_Example/Pods-LFLDarkModeKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C31988D35CB952D5A2E371B3 /* LFLDarkModeKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LFLDarkModeKit.podspec; path = ../LFLDarkModeKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB0DA8AC1CC4862887A49BF5 /* Pods-LFLDarkModeKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LFLDarkModeKit_Example.release.xcconfig"; path = "Target Support Files/Pods-LFLDarkModeKit_Example/Pods-LFLDarkModeKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D826475D24613836003CE72C /* LFLCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLCustomView.h; sourceTree = "<group>"; };
-		D826475E24613836003CE72C /* LFLCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLCustomView.m; sourceTree = "<group>"; };
 		D8461464246145F500C41133 /* darkModeAdapterColor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = darkModeAdapterColor.bundle; sourceTree = "<group>"; };
 		D8F5157324602D1F007424F6 /* LFLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLViewController.h; sourceTree = "<group>"; };
 		D8F5157424602D1F007424F6 /* LFLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLAppDelegate.m; sourceTree = "<group>"; };
@@ -116,19 +113,9 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D826475C24613836003CE72C /* views */ = {
-			isa = PBXGroup;
-			children = (
-				D826475D24613836003CE72C /* LFLCustomView.h */,
-				D826475E24613836003CE72C /* LFLCustomView.m */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
 		D8F5156F24602D1E007424F6 /* LFLDarkModeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D826475C24613836003CE72C /* views */,
 				D8F5157F24602D1F007424F6 /* LFLAppDelegate.h */,
 				D8F5157424602D1F007424F6 /* LFLAppDelegate.m */,
 				D8F5157324602D1F007424F6 /* LFLViewController.h */,
@@ -262,7 +249,6 @@
 			files = (
 				D8F5158724602D1F007424F6 /* LFLViewController.m in Sources */,
 				D8F5158424602D1F007424F6 /* main.m in Sources */,
-				D826475F24613837003CE72C /* LFLCustomView.m in Sources */,
 				D8F5158124602D1F007424F6 /* LFLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +381,7 @@
 			baseConfigurationReference = 921717FF0B5067D4244A940E /* Pods-LFLDarkModeDemo_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -415,6 +402,7 @@
 			baseConfigurationReference = E79D71C53FACA13565840DEA /* Pods-LFLDarkModeDemo_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;

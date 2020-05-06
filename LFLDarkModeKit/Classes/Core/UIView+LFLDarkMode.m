@@ -28,12 +28,12 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
     if (@available(iOS 13.0, *)) {
         if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection] && previousTraitCollection) {
             if (self.layer.borderWidth > 0) {
-                UIColor *adpterBorderColor = [UIColor ColorAdpterWithHex:self.layerBorderColorHex];
+                UIColor *adpterBorderColor = [UIColor colorAdpterWithHex:self.layerBorderColorHex];
                 self.layer.borderColor = adpterBorderColor.CGColor;
-                
+                [self.layer layoutIfNeeded];
             }
             if (self.layerBackgroundColorHex) {
-                UIColor *layerBackgroundColor = [UIColor ColorAdpterWithHex:self.layerBackgroundColorHex];
+                UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:self.layerBackgroundColorHex];
                 self.layer.backgroundColor = layerBackgroundColor.CGColor;
             }
             // 刷新layer 不一定会调用layoutSubViews
@@ -53,10 +53,10 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBorderColorHex:(NSString *)layerBorderColorHex {
     
-    if ([LFLDarkModeTool isBlankHexString:layerBorderColorHex]) {
+    if ([LFLDarkModeTool isBlankString:layerBorderColorHex]) {
         return;
     }
-    UIColor *currentBorderColor = [UIColor ColorAdpterWithHex:layerBorderColorHex];
+    UIColor *currentBorderColor = [UIColor colorAdpterWithHex:layerBorderColorHex];
     self.layer.borderColor = currentBorderColor.CGColor;
     objc_setAssociatedObject(self, layerBorderColorHexProperty, layerBorderColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
@@ -68,10 +68,10 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBackgroundColorHex:(NSString *)layerBackgroundColorHex {
     
-    if ([LFLDarkModeTool isBlankHexString:layerBackgroundColorHex]) {
+    if ([LFLDarkModeTool isBlankString:layerBackgroundColorHex]) {
         return;
     }
-    UIColor *layerBackgroundColor = [UIColor ColorAdpterWithHex:layerBackgroundColorHex];
+    UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:layerBackgroundColorHex];
     self.layer.backgroundColor = layerBackgroundColor.CGColor;
     objc_setAssociatedObject(self, layerBackgroundColorHexProperty, layerBackgroundColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }

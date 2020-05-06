@@ -8,6 +8,10 @@
 #import "LFLDarkModeManger.h"
 #import "LFLDarkModeTool.h"
 
+NSString *const darkPlistName = @"dark.plist";
+
+NSString *const lightPlistName = @"light.plist";
+
 @interface LFLDarkModeManger ()
 
 @property (nonatomic, readwrite,getter=isDarkModeStyle) BOOL darkModeStyle;
@@ -26,25 +30,19 @@
     dispatch_once(&token, ^{
         instance = [[LFLDarkModeManger alloc]init];
         instance.darkModeStyle = [instance isDarkModeStyle];
+        [instance darkModeMonitor];
     });
     return instance;
 }
 
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self darkModeMonitor];
-        [self loadDarkModeColorWithBundleName:bundleName];
-    });
-}
-
-- (void)loadDarkModeColorWithBundleName:(NSString *)bundleName{
-    if ([LFLDarkModeTool isBlankHexString:bundleName]) {
+    if ([LFLDarkModeTool isBlankString:bundleName]) {
         return;
     }
+    
     NSString * bundlePath = [[NSBundle mainBundle] pathForResource:bundleName ofType:@"bundle"];
-    NSString *darkModePath = [bundlePath stringByAppendingPathComponent:@"dark.plist"];
-    NSString *lightModePath = [bundlePath stringByAppendingPathComponent:@"light.plist"];
+    NSString *darkModePath = [bundlePath stringByAppendingPathComponent:darkPlistName];
+    NSString *lightModePath = [bundlePath stringByAppendingPathComponent:lightPlistName];
     self.darkModeColorDic = [NSDictionary dictionaryWithContentsOfFile:darkModePath];
     self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfFile:lightModePath];
 }
@@ -59,16 +57,16 @@
 }
 
 - (void)darkModeMonitor {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (@available(iOS 13.0, *)) {
             UIColor *dynamicColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                     self.darkModeStyle = YES;
-                    NSLog(@"LFLDarkModeKitLog:当前主题为暗黑模式");
+                    NSLog(@"LFLDarkModeKitLog:Current DarkMode");
                     return [UIColor blackColor];
                 } else {
                     self.darkModeStyle = NO;
-                    NSLog(@"LFLDarkModeKitLog:当前主题为正常模式");
+                    NSLog(@"LFLDarkModeKitLog:Current LightMode");
                     return [UIColor grayColor];
                 }
             }];
@@ -81,11 +79,11 @@
 }
 
 /*
- * 需要内部判断当前的暗黑模式来处理颜色
- * iOS13：动态返回，iOS13以下则固定light表查值
+ * iOS13 + :dynamic value
+ * iOS13 - :static value (lightModeColor)
  */
 - (NSString *)colorHexWithHexString:(NSString *)hexString {
-    if ([LFLDarkModeTool isBlankHexString:hexString]) {
+    if ([LFLDarkModeTool isBlankString:hexString]) {
         return nil;
     }
     if (self.isDarkModeStyle) {

@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLDarkModeTool : NSObject
 
-+ (BOOL)isBlankHexString:(NSString *)layerBorderColorHex;
+/// check String 
++ (BOOL)isBlankString:(NSString *)string;
 
 @end
 

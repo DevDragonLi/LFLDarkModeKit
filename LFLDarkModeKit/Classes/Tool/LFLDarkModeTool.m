@@ -9,14 +9,14 @@
 
 @implementation LFLDarkModeTool
 
-+ (BOOL)isBlankHexString:(NSString *)layerBorderColorHex {
-    if (layerBorderColorHex == nil || layerBorderColorHex == NULL) {
++ (BOOL)isBlankString:(NSString *)string {
+    if (string == nil || string == NULL) {
         return YES;
     }
-    if ([layerBorderColorHex isKindOfClass:[NSNull class]]) {
+    if ([string isKindOfClass:[NSNull class]]) {
         return YES;
     }
-    if ([layerBorderColorHex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
+    if ([string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
         return YES;
     }
     return NO;

@@ -10,16 +10,15 @@
 To run the example project, clone the repo, and run `pod install` from the 
 Example directory first.
 
-
 ## <a name="use"></a> 组件使用指南
 
-> 目前只适配项目使用Hex的色值体系
+> 暂时仅适Hex的色值体系项目
 
 - 宿主工程目录下新建bundle（可参考此repo demo ）
-	- 一个项目自定义色值字符串对应二个颜色（dark和light对应的真实色值）一一对应，后续新增模式可扩展
+	- 项目**自定义色值字符串对应颜色**（例如Demo：@“DEMO”在dark和light分别对应不同的真实色值）一一对应，后续新增模式可扩展
 	-  darkModeAdapterColor.bundle（内部名称为dark.plist和light.plist）
 		- dark.plist
-		-  light.plist
+		- light.plist
 - **初始化：** didFinishLaunchingWithOptions 初始化传入bundle名称，组件内部会解析
 
 	```
@@ -29,17 +28,18 @@ Example directory first.
 	}
 	```
 - Example  
-	- DEMO 为示例工程自定义色值字符串
 
 	```
 	// view类型
-	    self.exampleLabel.textColor = [UIColor ColorAdpterWithHex:@"DEMO"];
-	    
-	// Layer 类型
-	    self.customView.layerBorderColorHex = @"DEMO";
+   self.exampleLabel.textColor = [UIColor ColorAdpterWithHex:@"DEMO"];
+  
+  	// Imageview类型  
+self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
+
+	// Layer 圆角类型
+  self.customView.layerBorderColorHex = @"DEMO";
 	    
 	```
-
 
 ## Installation
 

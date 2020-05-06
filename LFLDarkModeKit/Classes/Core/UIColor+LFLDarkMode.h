@@ -11,10 +11,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (LFLDarkMode)
 
+/// adpter darkMode WithHexString
+/// @param colorHex colorHex
++ (UIColor *)colorAdpterWithHex:(NSString *)colorHex;
 
-+ (UIColor *)ColorAdpterWithHex:(NSString *)colorHex;
-
-+ (UIColor *)ColorAdpterWithHex:(NSString *)colorHex
+/// adpter darkMode WithHexString
+/// @param colorHex colorHex
+/// @param alpha alpha
++ (UIColor *)colorAdpterWithHex:(NSString *)colorHex
                           alpha:(CGFloat)alpha;
 @end
 

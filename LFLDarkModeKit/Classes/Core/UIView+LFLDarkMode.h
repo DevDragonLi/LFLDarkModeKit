@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (LFLDarkMode)
 
 
-/// config view layerBorderColor With Hex String 
+/// Config CaLayer BorderColor use Hex String
 @property(nonatomic,copy)NSString *layerBorderColorHex;
 
+/// Config CaLayer BackgroundColor use Hex String
 @property(nonatomic,copy)NSString *layerBackgroundColorHex;
 
 @end
