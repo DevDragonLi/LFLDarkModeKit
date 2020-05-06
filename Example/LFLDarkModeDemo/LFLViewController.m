@@ -8,14 +8,13 @@
 
 #import "LFLViewController.h"
 #import <LFLDarkModeKit.h>
-#import "LFLUIImageView.h"
 
 @interface LFLViewController ()
 
-/// ExampleImageView adapter dark mode
+/// xib ImageView adapter dark mode
 @property (weak, nonatomic) IBOutlet UIImageView *exampleImageView;
-/// 采取组件方式适配ImageView
-@property (strong, nonatomic) LFLUIImageView *adapterImageView;
+/// ImageView
+@property (strong, nonatomic) UIImageView *adapterImageView;
 /// CALayer adapter dark mode
 @property (weak, nonatomic) IBOutlet UILabel *exampleLabel;
 
@@ -33,36 +32,49 @@
     [self configTestViews];
 }
 
-/// 常见UI标准组件DEMO
+/// 常见UI标准组件 DEMO
 - (void)configTestViews {
-
-// 1. UIImageView xib/stroy 适配
-//   self.exampleImageView 参考Images.xcassets方式采取系统自动适配
-// 1.1 UIImageView 纯代码 项目采取后官方建议xcassets适配，使用组件新的API即可
+    
+#pragma mark 1. UIImageView : xib/story  animationImages
+    
+    /*
+     self.exampleImageView 参考Images.xcassets方式采取系统自动适配
+     1.1 UIImageView 单帧图片 纯代码 项目采取后官方建议xcassets适配，使用组件新的API即可
+     1.2 UIImageView animationImages 纯代码 直接采用[UIImage imageAdapterNamed:] 初始化照片即可
+     */
     [self.view addSubview:self.adapterImageView];
     self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
-    UIColor *dyColor = [UIColor colorAdpterWithHex:@"DEMO"];
     
-   //2.自定义视图存在圆角的情况下，CALayer层动态颜色处理
-    self.customView.backgroundColor = [UIColor grayColor];
+    UIColor *dyColor = [UIColor colorAdpterWithHex:@"DEMO"];
+#pragma mark 2. UIView
+    
+    /*
+     UIView及自定义View存在圆角的情况下，CALayer层动态颜色处理
+     Apple的API不包含动态CGColor，需要对应视图各个实现traitCollectionDidChange回调处理！）
+     */
     self.customView.layer.cornerRadius = 50.0f;
-    self.customView.layer.borderWidth = 10.0f;
+    self.customView.layer.borderWidth = 20.0f;
     self.customView.layerBorderColorHex = @"DEMO";
     
-    //3. UILabel 文本颜色修改 直接使用dyColor 即可。
+#pragma mark 3. UILabel
+    //  support：textColor，backgroundColor,highlightedTextColor
     self.exampleLabel.textColor = dyColor;
-    
-    //3. UIButton 直接使用dyColor 即可。
-    self.exampleButton.backgroundColor = dyColor;
-    //  [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
+    //    self.exampleLabel.backgroundColor = dyColor;
+    //    self.exampleLabel.highlightedTextColor = dyColor;
+#pragma mark 4.  UIButton
+    //    self.exampleButton.backgroundColor = dyColor;
+    //    self.exampleButton.layer.cornerRadius = 10.0f;
+    //   self.exampleButton.layer.borderWidth = 8.0f;
+    //    self.exampleButton.layerBorderColorHex = @"DEMO";
+    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
 }
 
 
+#pragma mark --------getters
 
-#pragma mark --------
-- (LFLUIImageView *)adapterImageView {
+- (UIImageView *)adapterImageView {
     if (!_adapterImageView) {
-        _adapterImageView = [[LFLUIImageView alloc]init];
+        _adapterImageView = [[UIImageView alloc]init];
         _adapterImageView.frame = CGRectMake(250, 55, 100, 100);
     }
     return _adapterImageView;
