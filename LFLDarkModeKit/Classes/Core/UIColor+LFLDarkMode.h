@@ -9,6 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define LFLAdpterColor(hexColorString)   [UIColor colorAdpterWithHex:hexColorString]
+
+#define LFLAdpterColorAlpha(hexColorString, alpha)  [UIColor colorAdpterWithHex:hexColorString alpha:alpha]
+
 @interface UIColor (LFLDarkMode)
 
 /// adpter darkMode WithHexString

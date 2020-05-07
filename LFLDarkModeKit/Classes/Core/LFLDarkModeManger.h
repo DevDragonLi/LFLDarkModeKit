@@ -9,12 +9,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 @interface LFLDarkModeManger : NSObject
 
+///current darkModeStyle
 @property (nonatomic, readonly,getter=isDarkModeStyle) BOOL darkModeStyle;
 
+/**
+ * darkModeManger
+ */
 + (instancetype)sharedInstance;
+
+/**
+ * destroy the LFLDarkModeManger object free sources
+ */
++ (void )destroySharedInstance;
+
+- (instancetype)init __attribute__((unavailable("Disabled !!! Please Use +sharedInstance instead")));
 
 /// NOTE：darkMode config Plist bundle Name
 - (void)configDarkModeColorBundleName:(NSString *)bundleName;

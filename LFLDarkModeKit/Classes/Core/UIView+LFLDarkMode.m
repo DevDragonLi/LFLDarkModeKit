@@ -10,6 +10,7 @@
 #import "LFLDarkModeTool.h"
 #import <objc/runtime.h>
 
+
 static void *layerBorderColorHexProperty = &layerBorderColorHexProperty;
 
 static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
@@ -17,14 +18,11 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 @implementation UIView (LFLDarkMode)
 
 + (void)load {
-    
-    method_exchangeImplementations(class_getInstanceMethod(self, @selector(traitCollectionDidChange:)),
-                                   class_getInstanceMethod(self, @selector(traitCollectionDidChange_LFL:)));
+    [LFLDarkModeTool swizzleInstanceForClass:[self class] originSelector:@selector(traitCollectionDidChange:) replaceSelector:@selector(environmentTraitCollectionDidChange:)];
 }
 
-
-- (void)traitCollectionDidChange_LFL:(UITraitCollection *)previousTraitCollection {
-    [self traitCollectionDidChange_LFL:previousTraitCollection];
+- (void)environmentTraitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [self environmentTraitCollectionDidChange:previousTraitCollection];
     if (@available(iOS 13.0, *)) {
         if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection] && previousTraitCollection) {
             if (self.layer.borderWidth > 0) {
@@ -36,7 +34,6 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
                 UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:self.layerBackgroundColorHex];
                 self.layer.backgroundColor = layerBackgroundColor.CGColor;
             }
-            // 刷新layer 不一定会调用layoutSubViews
             [self.layer layoutIfNeeded];
         }
     }

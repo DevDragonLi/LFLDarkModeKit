@@ -39,8 +39,7 @@
     
     /*
      self.exampleImageView 参考Images.xcassets方式采取系统自动适配
-     1.1 UIImageView 单帧图片 纯代码 项目采取后官方建议xcassets适配，使用组件新的API即可
-     1.2 UIImageView animationImages 纯代码 直接采用[UIImage imageAdapterNamed:] 初始化照片即可
+      UIImageView [UIImage imageAdapterNamed:] 
      */
     [self.view addSubview:self.adapterImageView];
     self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
@@ -62,11 +61,11 @@
     //    self.exampleLabel.backgroundColor = dyColor;
     //    self.exampleLabel.highlightedTextColor = dyColor;
 #pragma mark 4.  UIButton
-    //    self.exampleButton.backgroundColor = dyColor;
+        self.exampleButton.backgroundColor = dyColor;
     //    self.exampleButton.layer.cornerRadius = 10.0f;
     //   self.exampleButton.layer.borderWidth = 8.0f;
     //    self.exampleButton.layerBorderColorHex = @"DEMO";
-    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
+//    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
 }
 
 

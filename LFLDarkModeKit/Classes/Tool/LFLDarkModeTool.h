@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// check String 
 + (BOOL)isBlankString:(NSString *)string;
 
+/// swizzleInstanceMethod
++ (BOOL)swizzleInstanceForClass:(Class)swizzleClass
+                 originSelector:(SEL)originSelector
+                replaceSelector:(SEL)replaceSelector;
+
 @end
 
 NS_ASSUME_NONNULL_END

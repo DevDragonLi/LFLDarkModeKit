@@ -15,4 +15,12 @@
     [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
     return YES;
 }
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    
+    [LFLDarkModeManger destroySharedInstance];
+}
+
+
+
 @end

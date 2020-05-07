@@ -24,24 +24,24 @@ Example directory first.
 - didFinishLaunchingWithOptions: configDarkModeColorBundleName 
 
 ```
-	 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	    [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
-		    return YES;
-		}
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
+	    return YES;
+	}
 
 ```
 
 - Example  
 
 ``` 
-	// view
-   self.exampleLabel.textColor = [UIColor ColorAdpterWithHex:@"DEMO"];
+// view
+self.exampleLabel.textColor = [UIColor ColorAdpterWithHex:@"DEMO"];
   
-  	// Imageview 
-  self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
+// Imageview 
+self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
 
-	// Layer 
-  self.customView.layerBorderColorHex = @"DEMO";
+// Layer 
+self.customView.layerBorderColorHex = @"DEMO";
 	    
 ```
 
@@ -72,9 +72,9 @@ pod 'LFLDarkModeKit'
 
 ```
 
-	+ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchOS);
++ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchOS);
 
-	- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
+- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
 
 ```
 
@@ -87,23 +87,23 @@ pod 'LFLDarkModeKit'
 - -(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 
 ```
-	- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [super traitCollectionDidChange:previousTraitCollection];
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+[super traitCollectionDidChange:previousTraitCollection];
     
-    if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
-    // Config  Color Adapter 
-    	}
-    }
+if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]) {
+// Config  Color Adapter 
+	}
+}
 
 ```
 - performAsCurrent
 	
 ```
-	- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [super traitCollectionDidChange:previousTraitCollection];
-     [self.traitCollection performAsCurrentTraitCollection:^{
-        layer.backgroundColor = xxColor.CGColor;
-    }];
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+[super traitCollectionDidChange:previousTraitCollection];
+ [self.traitCollection performAsCurrentTraitCollection:^{
+    layer.backgroundColor = xxColor.CGColor;
+}];
 }
 	
 ```
@@ -111,13 +111,13 @@ pod 'LFLDarkModeKit'
 ### VC Config Single Style 
  
 ```
-	if (@available(iOS 13.0, *)) {
+if (@available(iOS 13.0, *)) {
     
-        [self setOverrideUserInterfaceStyle:UIUserInterfaceStyleDark];
-        
-    } else {
+    [self setOverrideUserInterfaceStyle:UIUserInterfaceStyleDark];
     
-    }
+} else {
+    
+}
 ```
 ### xib / Story 
 - color set 
@@ -135,7 +135,7 @@ pod 'LFLDarkModeKit'
 
 
 ```
-	typedef NS_ENUM(NSInteger, UIActivityIndicatorViewStyle) {
+typedef NS_ENUM(NSInteger, UIActivityIndicatorViewStyle) {
 	
     UIActivityIndicatorViewStyleMedium,
 	
@@ -147,7 +147,7 @@ pod 'LFLDarkModeKit'
 	
     UIActivityIndicatorViewStyleGray API_DEPRECATED_WITH_REPLACEMENT("UIActivityIndicatorViewStyleMedium",
 	
-	};
+};
 	
 ```
 

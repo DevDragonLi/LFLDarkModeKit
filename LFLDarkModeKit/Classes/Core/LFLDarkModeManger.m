@@ -8,8 +8,11 @@
 #import "LFLDarkModeManger.h"
 #import "LFLDarkModeTool.h"
 
-NSString *const darkPlistName = @"dark.plist";
+static LFLDarkModeManger *darkModeMangerInstance = nil;
+static dispatch_once_t onceToken;
+static bool isFirstAccess = YES;
 
+NSString *const darkPlistName = @"dark.plist";
 NSString *const lightPlistName = @"light.plist";
 
 @interface LFLDarkModeManger ()
@@ -24,15 +27,47 @@ NSString *const lightPlistName = @"light.plist";
 
 @implementation LFLDarkModeManger
 
+#pragma mark - Public Method
+
 + (instancetype)sharedInstance {
-    static LFLDarkModeManger *instance = nil;
-    static dispatch_once_t token;
-    dispatch_once(&token, ^{
-        instance = [[LFLDarkModeManger alloc]init];
-        instance.darkModeStyle = [instance isDarkModeStyle];
-        [instance darkModeMonitor];
+    dispatch_once(&onceToken, ^{
+        isFirstAccess = NO;
+        darkModeMangerInstance = [[super allocWithZone:NULL] init];
+        darkModeMangerInstance.darkModeStyle = [darkModeMangerInstance isDarkModeStyle];
+        [darkModeMangerInstance darkModeMonitor];
     });
-    return instance;
+    return darkModeMangerInstance;
+}
+
+#pragma mark - Life Cycle
+
++ (instancetype)allocWithZone:(NSZone *)zone
+{
+    return [self sharedInstance];
+}
+
+- (instancetype)copy {
+    return [[LFLDarkModeManger alloc] init];
+}
+
+- (instancetype)mutableCopy {
+    return [[LFLDarkModeManger alloc] init];
+}
+
+- (instancetype)init {
+    if(darkModeMangerInstance){
+        return darkModeMangerInstance;
+    }
+    if (isFirstAccess) {
+        [self doesNotRecognizeSelector:_cmd];
+    }
+    self = [super init];
+    return self;
+}
+
++ (void)destroySharedInstance {
+    onceToken = 0;
+    darkModeMangerInstance = nil;
 }
 
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
