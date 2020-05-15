@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10A8C3046A1AA2CFC50698F38FDEB256 /* LFLDarkModeManger.h in Headers */ = {isa = PBXBuildFile; fileRef = 445FAB335E3E38C35D4294F7AC1284E8 /* LFLDarkModeManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29EDC4FD480BBB1C8648EB844E49B756 /* LFLDarkModeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAF78BABEE335C4EB4778F898BFAB5B /* LFLDarkModeKit-dummy.m */; };
-		2BCE217BD060C2EA31E2A1335D8EC618 /* LFLDarkModeManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C77892741EEB0C5A90EC7C10856C0F /* LFLDarkModeManger.m */; };
-		3910340A5226A9B270E5341639600F61 /* LFLDarkModeTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B57BCD38E61D0DBC3D362448F3E8F7C /* LFLDarkModeTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6F3D86D347C38DF944BA823DF2153643 /* UIColor+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 060215F917B944748CB2C3483FA41782 /* UIColor+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		053B68F48811B643E8C70FB6A4A4A32F /* UIColor+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B86CA78479669FA25C457C92DF54A6 /* UIColor+LFLDarkMode.m */; };
+		07E1767500004DC7C451B167FA7CC99E /* UIView+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC4A65422569D4A4F978AEE18F2B /* UIView+LFLDarkMode.m */; };
+		0914BCBD0435F3AB0F9389FC73D31CE6 /* LFLDarkModeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 10DF63881CE683BC92D334C4EDD51AC8 /* LFLDarkModeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15ADE76BE811E4D792DAFC5A0D3B664A /* UIColor+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AF60B2FB211033C32E8F3075093A281 /* UIColor+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C6AB067D397C19399FF4D4460C63094 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		22A323466170B0EC543615A6C2E09BC8 /* LFLDarkModeKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EA6B4BB85711DA52A49DB418E1A9625 /* LFLDarkModeKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2580E9D059B943A8C2CA9562F5282BD6 /* LFLDarkModeManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D520422B85E78B94A42364EA06130195 /* LFLDarkModeManger.m */; };
+		33BAAB5B0ED521854DCFA54BF20C94CF /* LFLDarkModeTool.h in Headers */ = {isa = PBXBuildFile; fileRef = B408DADC30FB3275503430D01CE5A4DE /* LFLDarkModeTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37DA240A64BFA0FCCDA91D822FDA9C97 /* LFLDarkModeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7989823DDB599DCE43998DF8CAD8C0 /* LFLDarkModeTool.m */; };
+		5FEC92258EC16170B591715D427CDD58 /* UIView+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 129604F511DA455875D8CDBE1EA31E9C /* UIView+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9471A5B02C544F35F3DCF6840F355ECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		96B850FCDD6C16F90ED302F4C56072C5 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C3488A402B4727E863C80952907745 /* Pods-LFLDarkModeDemo_Example-dummy.m */; };
-		99AA26EB2402DF44575DB00679FD1FC1 /* UIView+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D7F4458CFAB0263E2F17E35398A964 /* UIView+LFLDarkMode.m */; };
-		9A12A0BA4A195CD4E1388654A89C328F /* UIImage+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFB2260BC6063F88A39E870078B69D3 /* UIImage+LFLDarkMode.m */; };
-		A8EA8BD8FFAF096DA633B5F53C2579CA /* LFLDarkModeKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B55CA121C4EC2B3D70FA74AC7BD2542A /* LFLDarkModeKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B63B6905648B95337ADC2173FE0D7BC2 /* LFLDarkModeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C852714B2F0F9E9F506EB24CFB64FC /* LFLDarkModeTool.m */; };
 		B8084252B4F906D3B8B0769D38E84058 /* Pods-LFLDarkModeDemo_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4EE5A297C322E8CE657C5C6D2573143 /* Pods-LFLDarkModeDemo_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1728CCCB1887249CA70F6439780DDD8 /* LFLDarkModeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C72723D98B36A215FAB589E2FDAA175C /* LFLDarkModeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D91E65B67767F778BEEAF8D5AA1202CD /* UIImage+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 76C0218763AD6A6086F50161DE718B4F /* UIImage+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA29BC822DB3ADEEA87681CFB201AD28 /* UIColor+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F038852D9A59A79257EDE6E5DE7143A6 /* UIColor+LFLDarkMode.m */; };
-		DF7418C54BC3627237A75E95CBDB247C /* UIView+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = E529A94FAC45FAD490C15DFF41798EAB /* UIView+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3907195A165B3CBDD2A2DBF004C3094 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E45B250BC717D9A229B28212E0B5B63C /* LFLDarkModeManger.h in Headers */ = {isa = PBXBuildFile; fileRef = 9485C8424C3C9333FA80D17A443C6064 /* LFLDarkModeManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA820D505981493C57E3EF207001CC33 /* LFLDarkModeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D7CAA1C8EF81CFA2753AABE22C51 /* LFLDarkModeKit-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,42 +35,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		060215F917B944748CB2C3483FA41782 /* UIColor+LFLDarkMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+LFLDarkMode.h"; path = "LFLDarkModeKit/Classes/Core/UIColor+LFLDarkMode.h"; sourceTree = "<group>"; };
+		038B18F87455BA70F3C2E536A53A47F1 /* LFLDarkModeKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LFLDarkModeKit.modulemap; sourceTree = "<group>"; };
 		0C29E97C2386B6E1A71F16F9D98FAA32 /* Pods-LFLDarkModeDemo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LFLDarkModeDemo_Example.release.xcconfig"; sourceTree = "<group>"; };
+		10DF63881CE683BC92D334C4EDD51AC8 /* LFLDarkModeKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeKit.h; path = LFLDarkModeKit/Classes/LFLDarkModeKit.h; sourceTree = "<group>"; };
+		129604F511DA455875D8CDBE1EA31E9C /* UIView+LFLDarkMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+LFLDarkMode.h"; path = "LFLDarkModeKit/Classes/Core/UIView+LFLDarkMode.h"; sourceTree = "<group>"; };
 		16C3488A402B4727E863C80952907745 /* Pods-LFLDarkModeDemo_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LFLDarkModeDemo_Example-dummy.m"; sourceTree = "<group>"; };
-		2D93207A6FE27A529F67A480E68FA59A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		194DB8447EB31A21FBD0A39DEBA387AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		2E5C33C66D4CBA471532E8B4AFB00E2D /* Pods-LFLDarkModeDemo_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LFLDarkModeDemo_Example.modulemap"; sourceTree = "<group>"; };
 		2F8E399224E0EDBAB3CB51C4C5B8D447 /* Pods_LFLDarkModeDemo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LFLDarkModeDemo_Example.framework; path = "Pods-LFLDarkModeDemo_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		445FAB335E3E38C35D4294F7AC1284E8 /* LFLDarkModeManger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeManger.h; path = LFLDarkModeKit/Classes/Core/LFLDarkModeManger.h; sourceTree = "<group>"; };
-		48C77892741EEB0C5A90EC7C10856C0F /* LFLDarkModeManger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFLDarkModeManger.m; path = LFLDarkModeKit/Classes/Core/LFLDarkModeManger.m; sourceTree = "<group>"; };
+		3FC9582B020F3AC765E2D8D176150905 /* LFLDarkModeKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LFLDarkModeKit.release.xcconfig; sourceTree = "<group>"; };
 		4B56A87D258967D01D2C645CBA26F062 /* Pods-LFLDarkModeDemo_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LFLDarkModeDemo_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4CEA0925A7C6C473FE673E9545A68899 /* Pods-LFLDarkModeDemo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LFLDarkModeDemo_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		56D7F4458CFAB0263E2F17E35398A964 /* UIView+LFLDarkMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+LFLDarkMode.m"; path = "LFLDarkModeKit/Classes/Core/UIView+LFLDarkMode.m"; sourceTree = "<group>"; };
-		5ABF26BD53814B7327732B2314436150 /* LFLDarkModeKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LFLDarkModeKit-Info.plist"; sourceTree = "<group>"; };
+		4E0ACB6D27C355142972032A61C321CD /* LFLDarkModeKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LFLDarkModeKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5AE6D7CAA1C8EF81CFA2753AABE22C51 /* LFLDarkModeKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LFLDarkModeKit-dummy.m"; sourceTree = "<group>"; };
+		5AF60B2FB211033C32E8F3075093A281 /* UIColor+LFLDarkMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+LFLDarkMode.h"; path = "LFLDarkModeKit/Classes/Core/UIColor+LFLDarkMode.h"; sourceTree = "<group>"; };
+		5D9786B2DF8DF60DB5651FB2B708B8C6 /* LFLDarkModeKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LFLDarkModeKit-prefix.pch"; sourceTree = "<group>"; };
+		5EA6B4BB85711DA52A49DB418E1A9625 /* LFLDarkModeKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LFLDarkModeKit-umbrella.h"; sourceTree = "<group>"; };
 		65A5DB76626617FFDCECBE98A1AE7A66 /* Pods-LFLDarkModeDemo_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LFLDarkModeDemo_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6B57BCD38E61D0DBC3D362448F3E8F7C /* LFLDarkModeTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeTool.h; path = LFLDarkModeKit/Classes/Tool/LFLDarkModeTool.h; sourceTree = "<group>"; };
-		76C0218763AD6A6086F50161DE718B4F /* UIImage+LFLDarkMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+LFLDarkMode.h"; path = "LFLDarkModeKit/Classes/Core/UIImage+LFLDarkMode.h"; sourceTree = "<group>"; };
-		7F42956C5870B0DC9B39E2439C7B25BF /* LFLDarkModeKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LFLDarkModeKit.modulemap; sourceTree = "<group>"; };
-		84C852714B2F0F9E9F506EB24CFB64FC /* LFLDarkModeTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFLDarkModeTool.m; path = LFLDarkModeKit/Classes/Tool/LFLDarkModeTool.m; sourceTree = "<group>"; };
-		9AAF78BABEE335C4EB4778F898BFAB5B /* LFLDarkModeKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LFLDarkModeKit-dummy.m"; sourceTree = "<group>"; };
+		80B9339DF9E94AD8BA26DF5E5A26FB86 /* LFLDarkModeKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LFLDarkModeKit.debug.xcconfig; sourceTree = "<group>"; };
+		83B86CA78479669FA25C457C92DF54A6 /* UIColor+LFLDarkMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LFLDarkMode.m"; path = "LFLDarkModeKit/Classes/Core/UIColor+LFLDarkMode.m"; sourceTree = "<group>"; };
+		8E7989823DDB599DCE43998DF8CAD8C0 /* LFLDarkModeTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFLDarkModeTool.m; path = LFLDarkModeKit/Classes/Tool/LFLDarkModeTool.m; sourceTree = "<group>"; };
+		9485C8424C3C9333FA80D17A443C6064 /* LFLDarkModeManger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeManger.h; path = LFLDarkModeKit/Classes/Core/LFLDarkModeManger.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A93BEED1F2B7048219F1C1C6ABDA281F /* LFLDarkModeKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LFLDarkModeKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B55CA121C4EC2B3D70FA74AC7BD2542A /* LFLDarkModeKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LFLDarkModeKit-umbrella.h"; sourceTree = "<group>"; };
-		BDFB2260BC6063F88A39E870078B69D3 /* UIImage+LFLDarkMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+LFLDarkMode.m"; path = "LFLDarkModeKit/Classes/Core/UIImage+LFLDarkMode.m"; sourceTree = "<group>"; };
+		B408DADC30FB3275503430D01CE5A4DE /* LFLDarkModeTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeTool.h; path = LFLDarkModeKit/Classes/Tool/LFLDarkModeTool.h; sourceTree = "<group>"; };
 		BE9847841081E03F8336616364007488 /* LFLDarkModeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LFLDarkModeKit.framework; path = LFLDarkModeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4CD50DFEAFD99A4694FE5D94F2C2AE4 /* LFLDarkModeKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LFLDarkModeKit.xcconfig; sourceTree = "<group>"; };
-		C72723D98B36A215FAB589E2FDAA175C /* LFLDarkModeKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LFLDarkModeKit.h; path = LFLDarkModeKit/Classes/LFLDarkModeKit.h; sourceTree = "<group>"; };
 		C8232FA4F0EDEDCAB1F2049DA52AC0E0 /* Pods-LFLDarkModeDemo_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LFLDarkModeDemo_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D9AE57ACAD53B0A9509629D790F7CBC2 /* LFLDarkModeKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LFLDarkModeKit-prefix.pch"; sourceTree = "<group>"; };
+		D520422B85E78B94A42364EA06130195 /* LFLDarkModeManger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LFLDarkModeManger.m; path = LFLDarkModeKit/Classes/Core/LFLDarkModeManger.m; sourceTree = "<group>"; };
+		DA521264F6261F6F863D07B014FC846F /* LFLDarkModeKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LFLDarkModeKit-Info.plist"; sourceTree = "<group>"; };
 		E255D353A293BD6E390323EFE03FB7D6 /* Pods-LFLDarkModeDemo_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LFLDarkModeDemo_Example-Info.plist"; sourceTree = "<group>"; };
 		E4EE5A297C322E8CE657C5C6D2573143 /* Pods-LFLDarkModeDemo_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LFLDarkModeDemo_Example-umbrella.h"; sourceTree = "<group>"; };
-		E529A94FAC45FAD490C15DFF41798EAB /* UIView+LFLDarkMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+LFLDarkMode.h"; path = "LFLDarkModeKit/Classes/Core/UIView+LFLDarkMode.h"; sourceTree = "<group>"; };
-		EA372E3042892EEA5724D90D29B8A7E1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F038852D9A59A79257EDE6E5DE7143A6 /* UIColor+LFLDarkMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+LFLDarkMode.m"; path = "LFLDarkModeKit/Classes/Core/UIColor+LFLDarkMode.m"; sourceTree = "<group>"; };
+		E639E581D1BFC33458C3DCBA5B8AC645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FCA2DC4A65422569D4A4F978AEE18F2B /* UIView+LFLDarkMode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+LFLDarkMode.m"; path = "LFLDarkModeKit/Classes/Core/UIView+LFLDarkMode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2520DDE5EA827BC705C81D60463790AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C6AB067D397C19399FF4D4460C63094 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A23C837089F819EC9A6174A0C5B2FE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,74 +86,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40639404EA98233CDD02D73135B7EBFB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3907195A165B3CBDD2A2DBF004C3094 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2057892720ED108CA4E61175956D7913 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4E0ACB6D27C355142972032A61C321CD /* LFLDarkModeKit.podspec */,
+				E639E581D1BFC33458C3DCBA5B8AC645 /* LICENSE */,
+				194DB8447EB31A21FBD0A39DEBA387AC /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		2278F3A6E0FE076A9B08BA645165F478 /* LFLDarkModeKit */ = {
+			isa = PBXGroup;
+			children = (
+				10DF63881CE683BC92D334C4EDD51AC8 /* LFLDarkModeKit.h */,
+				C2035F16EBFDD2E120339C4773629BA5 /* core */,
+				2057892720ED108CA4E61175956D7913 /* Pod */,
+				5E4888A09C6EE6D01BB86527C019435B /* Support Files */,
+				6DD52B0D326BD8140A8798CEC0A36CCA /* Tool */,
+			);
+			name = LFLDarkModeKit;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		470116F8E30B5A91BCE68CF5BF218CAC /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				81621D7AFA050567EDA203411BAB19D5 /* LFLDarkModeKit */,
+				2278F3A6E0FE076A9B08BA645165F478 /* LFLDarkModeKit */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		4BE52D6917A8CEFA937C2B0C0766A459 /* Support Files */ = {
+		5E4888A09C6EE6D01BB86527C019435B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7F42956C5870B0DC9B39E2439C7B25BF /* LFLDarkModeKit.modulemap */,
-				C4CD50DFEAFD99A4694FE5D94F2C2AE4 /* LFLDarkModeKit.xcconfig */,
-				9AAF78BABEE335C4EB4778F898BFAB5B /* LFLDarkModeKit-dummy.m */,
-				5ABF26BD53814B7327732B2314436150 /* LFLDarkModeKit-Info.plist */,
-				D9AE57ACAD53B0A9509629D790F7CBC2 /* LFLDarkModeKit-prefix.pch */,
-				B55CA121C4EC2B3D70FA74AC7BD2542A /* LFLDarkModeKit-umbrella.h */,
+				038B18F87455BA70F3C2E536A53A47F1 /* LFLDarkModeKit.modulemap */,
+				5AE6D7CAA1C8EF81CFA2753AABE22C51 /* LFLDarkModeKit-dummy.m */,
+				DA521264F6261F6F863D07B014FC846F /* LFLDarkModeKit-Info.plist */,
+				5D9786B2DF8DF60DB5651FB2B708B8C6 /* LFLDarkModeKit-prefix.pch */,
+				5EA6B4BB85711DA52A49DB418E1A9625 /* LFLDarkModeKit-umbrella.h */,
+				80B9339DF9E94AD8BA26DF5E5A26FB86 /* LFLDarkModeKit.debug.xcconfig */,
+				3FC9582B020F3AC765E2D8D176150905 /* LFLDarkModeKit.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/LFLDarkModeKit";
 			sourceTree = "<group>";
 		};
-		5538606AFEA01E12F74EF915E2210025 /* Tool */ = {
+		6DD52B0D326BD8140A8798CEC0A36CCA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				6B57BCD38E61D0DBC3D362448F3E8F7C /* LFLDarkModeTool.h */,
-				84C852714B2F0F9E9F506EB24CFB64FC /* LFLDarkModeTool.m */,
+				B408DADC30FB3275503430D01CE5A4DE /* LFLDarkModeTool.h */,
+				8E7989823DDB599DCE43998DF8CAD8C0 /* LFLDarkModeTool.m */,
 			);
 			name = Tool;
-			sourceTree = "<group>";
-		};
-		660E6ACE5CB1AC6620247F588747D10E /* core */ = {
-			isa = PBXGroup;
-			children = (
-				445FAB335E3E38C35D4294F7AC1284E8 /* LFLDarkModeManger.h */,
-				48C77892741EEB0C5A90EC7C10856C0F /* LFLDarkModeManger.m */,
-				060215F917B944748CB2C3483FA41782 /* UIColor+LFLDarkMode.h */,
-				F038852D9A59A79257EDE6E5DE7143A6 /* UIColor+LFLDarkMode.m */,
-				76C0218763AD6A6086F50161DE718B4F /* UIImage+LFLDarkMode.h */,
-				BDFB2260BC6063F88A39E870078B69D3 /* UIImage+LFLDarkMode.m */,
-				E529A94FAC45FAD490C15DFF41798EAB /* UIView+LFLDarkMode.h */,
-				56D7F4458CFAB0263E2F17E35398A964 /* UIView+LFLDarkMode.m */,
-			);
-			name = core;
-			sourceTree = "<group>";
-		};
-		81621D7AFA050567EDA203411BAB19D5 /* LFLDarkModeKit */ = {
-			isa = PBXGroup;
-			children = (
-				C72723D98B36A215FAB589E2FDAA175C /* LFLDarkModeKit.h */,
-				660E6ACE5CB1AC6620247F588747D10E /* core */,
-				C5BA93AC5704A09799A6FD272F17DF9A /* Pod */,
-				4BE52D6917A8CEFA937C2B0C0766A459 /* Support Files */,
-				5538606AFEA01E12F74EF915E2210025 /* Tool */,
-			);
-			name = LFLDarkModeKit;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		8CEC4F21766C8A1858E18CC40A42C40A /* Targets Support Files */ = {
@@ -184,14 +177,17 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C5BA93AC5704A09799A6FD272F17DF9A /* Pod */ = {
+		C2035F16EBFDD2E120339C4773629BA5 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				A93BEED1F2B7048219F1C1C6ABDA281F /* LFLDarkModeKit.podspec */,
-				2D93207A6FE27A529F67A480E68FA59A /* LICENSE */,
-				EA372E3042892EEA5724D90D29B8A7E1 /* README.md */,
+				9485C8424C3C9333FA80D17A443C6064 /* LFLDarkModeManger.h */,
+				D520422B85E78B94A42364EA06130195 /* LFLDarkModeManger.m */,
+				5AF60B2FB211033C32E8F3075093A281 /* UIColor+LFLDarkMode.h */,
+				83B86CA78479669FA25C457C92DF54A6 /* UIColor+LFLDarkMode.m */,
+				129604F511DA455875D8CDBE1EA31E9C /* UIView+LFLDarkMode.h */,
+				FCA2DC4A65422569D4A4F978AEE18F2B /* UIView+LFLDarkMode.m */,
 			);
-			name = Pod;
+			name = core;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -233,17 +229,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B8F473943948727FCD5F4A527EC8D74 /* Headers */ = {
+		5C61B1092E58947C02652BC44CC3A5E5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8EA8BD8FFAF096DA633B5F53C2579CA /* LFLDarkModeKit-umbrella.h in Headers */,
-				C1728CCCB1887249CA70F6439780DDD8 /* LFLDarkModeKit.h in Headers */,
-				10A8C3046A1AA2CFC50698F38FDEB256 /* LFLDarkModeManger.h in Headers */,
-				3910340A5226A9B270E5341639600F61 /* LFLDarkModeTool.h in Headers */,
-				6F3D86D347C38DF944BA823DF2153643 /* UIColor+LFLDarkMode.h in Headers */,
-				D91E65B67767F778BEEAF8D5AA1202CD /* UIImage+LFLDarkMode.h in Headers */,
-				DF7418C54BC3627237A75E95CBDB247C /* UIView+LFLDarkMode.h in Headers */,
+				22A323466170B0EC543615A6C2E09BC8 /* LFLDarkModeKit-umbrella.h in Headers */,
+				0914BCBD0435F3AB0F9389FC73D31CE6 /* LFLDarkModeKit.h in Headers */,
+				E45B250BC717D9A229B28212E0B5B63C /* LFLDarkModeManger.h in Headers */,
+				33BAAB5B0ED521854DCFA54BF20C94CF /* LFLDarkModeTool.h in Headers */,
+				15ADE76BE811E4D792DAFC5A0D3B664A /* UIColor+LFLDarkMode.h in Headers */,
+				5FEC92258EC16170B591715D427CDD58 /* UIView+LFLDarkMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,12 +247,12 @@
 /* Begin PBXNativeTarget section */
 		9F227EB014C3F477C80D7891CAE4856D /* LFLDarkModeKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0556BFA1F884B607301D3A41F2A8D62 /* Build configuration list for PBXNativeTarget "LFLDarkModeKit" */;
+			buildConfigurationList = 3B7A150B80776C475EDB25A4F2E4103C /* Build configuration list for PBXNativeTarget "LFLDarkModeKit" */;
 			buildPhases = (
-				6B8F473943948727FCD5F4A527EC8D74 /* Headers */,
-				61D4A66F2E411CA421E0C9D01BCA9AA7 /* Sources */,
-				40639404EA98233CDD02D73135B7EBFB /* Frameworks */,
-				A6BCE928BF2221D4CA4AE3908A1DDD5C /* Resources */,
+				5C61B1092E58947C02652BC44CC3A5E5 /* Headers */,
+				0DAAB2DCD2579100CD8FBD7275D15C48 /* Sources */,
+				2520DDE5EA827BC705C81D60463790AC /* Frameworks */,
+				CE87AF3EDB4217298F0E055213793B2C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -302,6 +297,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = E71337B49BDE554F7CE5BD113D32C40A /* Products */;
@@ -315,7 +311,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A6BCE928BF2221D4CA4AE3908A1DDD5C /* Resources */ = {
+		CE87AF3EDB4217298F0E055213793B2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,24 +328,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0DAAB2DCD2579100CD8FBD7275D15C48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA820D505981493C57E3EF207001CC33 /* LFLDarkModeKit-dummy.m in Sources */,
+				2580E9D059B943A8C2CA9562F5282BD6 /* LFLDarkModeManger.m in Sources */,
+				37DA240A64BFA0FCCDA91D822FDA9C97 /* LFLDarkModeTool.m in Sources */,
+				053B68F48811B643E8C70FB6A4A4A32F /* UIColor+LFLDarkMode.m in Sources */,
+				07E1767500004DC7C451B167FA7CC99E /* UIView+LFLDarkMode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BD581A39DD2907FABFA56FBCDD9D373 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				96B850FCDD6C16F90ED302F4C56072C5 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61D4A66F2E411CA421E0C9D01BCA9AA7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29EDC4FD480BBB1C8648EB844E49B756 /* LFLDarkModeKit-dummy.m in Sources */,
-				2BCE217BD060C2EA31E2A1335D8EC618 /* LFLDarkModeManger.m in Sources */,
-				B63B6905648B95337ADC2173FE0D7BC2 /* LFLDarkModeTool.m in Sources */,
-				DA29BC822DB3ADEEA87681CFB201AD28 /* UIColor+LFLDarkMode.m in Sources */,
-				9A12A0BA4A195CD4E1388654A89C328F /* UIImage+LFLDarkMode.m in Sources */,
-				99AA26EB2402DF44575DB00679FD1FC1 /* UIView+LFLDarkMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,38 +360,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		179BC5B9BEE46979B0E67C220D796BEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4CD50DFEAFD99A4694FE5D94F2C2AE4 /* LFLDarkModeKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit.modulemap";
-				PRODUCT_MODULE_NAME = LFLDarkModeKit;
-				PRODUCT_NAME = LFLDarkModeKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		6062D2636C22B669D00F167FD4C94EA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CEA0925A7C6C473FE673E9545A68899 /* Pods-LFLDarkModeDemo_Example.debug.xcconfig */;
@@ -424,6 +387,37 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B32A3C43517E56F9AE60346D8D09147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B9339DF9E94AD8BA26DF5E5A26FB86 /* LFLDarkModeKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LFLDarkModeKit/LFLDarkModeKit.modulemap";
+				PRODUCT_MODULE_NAME = LFLDarkModeKit;
+				PRODUCT_NAME = LFLDarkModeKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -554,9 +548,9 @@
 			};
 			name = Debug;
 		};
-		95D1B401D1A4448C8A82F74A67A7698D /* Debug */ = {
+		95FCF775E7A3D9FD6FEAD2B50C5204CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4CD50DFEAFD99A4694FE5D94F2C2AE4 /* LFLDarkModeKit.xcconfig */;
+			baseConfigurationReference = 3FC9582B020F3AC765E2D8D176150905 /* LFLDarkModeKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -580,10 +574,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		C67CB06A2282E78484442C50AA60A529 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -622,6 +617,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3B7A150B80776C475EDB25A4F2E4103C /* Build configuration list for PBXNativeTarget "LFLDarkModeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B32A3C43517E56F9AE60346D8D09147 /* Debug */,
+				95FCF775E7A3D9FD6FEAD2B50C5204CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -636,15 +640,6 @@
 			buildConfigurations = (
 				6062D2636C22B669D00F167FD4C94EA2 /* Debug */,
 				C67CB06A2282E78484442C50AA60A529 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C0556BFA1F884B607301D3A41F2A8D62 /* Build configuration list for PBXNativeTarget "LFLDarkModeKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95D1B401D1A4448C8A82F74A67A7698D /* Debug */,
-				179BC5B9BEE46979B0E67C220D796BEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

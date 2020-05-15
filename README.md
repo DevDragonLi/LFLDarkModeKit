@@ -3,6 +3,7 @@
 > Adapter iOS13+ DarkMode 
 
 - **[LFLDarkModeKit Detail](#use)** 
+
 - **[Project Adapter By Apple API Description](#darkMode)** 
 
 ## Example
@@ -12,11 +13,28 @@ Example directory first.
 
 ## <a name="use"></a> LFLDarkModeKit Detail
 
-> now support Hex Color 
+- 类图如下
 
-- Project create bundle source 
+```
+.
+├── Core
+│   ├── LFLDarkModeManger.h
+│   ├── LFLDarkModeManger.m
+│   ├── UIColor+LFLDarkMode.h
+│   ├── UIColor+LFLDarkMode.m
+│   ├── UIView+LFLDarkMode.h
+│   └── UIView+LFLDarkMode.m
+├── LFLDarkModeKit.h
+└── Tool
+    ├── LFLDarkModeTool.h
+    └── LFLDarkModeTool.m
+```
+
+> now only support Hex Color 
+
+- Project create bundle source  
 	- **完全各项目自定义色值字符串映射对应颜色**
-		- （Example：@“DEMO” 在dark和light分别对应不同的真实色值）一一映射，后续可支持新增模式
+		- Example：@“DEMO” 在dark和light分别对应不同的真实色值一一映射，后续可支持新增模式
 	- Example：darkModeAdapterColor.bundle （Color Set ）
 		- dark.plist 
 		- light.plist
@@ -54,6 +72,7 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
 pod 'LFLDarkModeKit'
 
 ```
+
 
 ## <a name="darkMode"></a> Project Adapter By Apple API Description
 

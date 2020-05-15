@@ -11,6 +11,5 @@
 #import "LFLDarkModeManger.h"
 #import "UIColor+LFLDarkMode.h"
 #import "UIView+LFLDarkMode.h"
-#import "UIImage+LFLDarkMode.h"
-
+//#import "LFLDarkModeTool.h" // If you need a function of this class, directly reference !
 #endif /* LFLDrakModeKit_h */

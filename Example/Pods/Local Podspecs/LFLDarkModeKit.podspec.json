@@ -1,6 +1,6 @@
 {
   "name": "LFLDarkModeKit",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "summary": "LFLDarkModeKit",
   "description": "iOS DarkMode Adapter Kit",
   "homepage": "https://github.com/DevDragonli/LFLDarkModeKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/DevDragonli/LFLDarkModeKit.git",
-    "tag": "0.3.1"
+    "tag": "0.4.0"
   },
   "platforms": {
     "ios": "9.0"
