@@ -11,7 +11,7 @@
 #endif
 
 #import "LFLDarkModeKit.h"
-#import "LFLDarkModeTool.h"
+#import "NSString+Blank.h"
 #import "LFLDarkModeManger.h"
 #import "UIColor+LFLDarkMode.h"
 #import "UIView+LFLDarkMode.h"

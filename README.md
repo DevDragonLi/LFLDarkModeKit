@@ -11,9 +11,19 @@
 To run the example project, clone the repo, and run `pod install` from the 
 Example directory first.
 
+## Installation
+
+LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+
+  pod 'LFLDarkModeKit', '~> 1.0.0
+
+```
+
 ## <a name="use"></a> LFLDarkModeKit Detail
 
-- 类图如下
+- Layout Class   
 
 ```
 .
@@ -26,8 +36,8 @@ Example directory first.
 │   └── UIView+LFLDarkMode.m
 ├── LFLDarkModeKit.h
 └── Tool
-    ├── LFLDarkModeTool.h
-    └── LFLDarkModeTool.m
+    ├── NSString+Blank.h
+    └── NSString+Blank.m
 ```
 
 > now only support Hex Color 
@@ -62,17 +72,6 @@ self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
 self.customView.layerBorderColorHex = @"DEMO";
 	    
 ```
-
-## Installation
-
-LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
-
-```ruby
-
-pod 'LFLDarkModeKit'
-
-```
-
 
 ## <a name="darkMode"></a> Project Adapter By Apple API Description
 

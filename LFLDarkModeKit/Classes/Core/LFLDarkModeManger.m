@@ -6,10 +6,12 @@
 //
 
 #import "LFLDarkModeManger.h"
-#import "LFLDarkModeTool.h"
+#import "NSString+Blank.h"
 
 static LFLDarkModeManger *darkModeMangerInstance = nil;
+
 static dispatch_once_t onceToken;
+
 static bool isFirstAccess = YES;
 
 NSString *const darkPlistName = @"dark.plist";
@@ -71,7 +73,7 @@ NSString *const lightPlistName = @"light.plist";
 }
 
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
-    if ([LFLDarkModeTool isBlankString:bundleName]) {
+    if ([NSString isBlankString:bundleName]) {
         return;
     }
     
@@ -97,11 +99,11 @@ NSString *const lightPlistName = @"light.plist";
             UIColor *dynamicColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                     self.darkModeStyle = YES;
-                    NSLog(@"LFLDarkModeKitLog:Current DarkMode");
+                    NSLog(@"LFLDarkModeKitLog:DarkMode Now !");
                     return [UIColor blackColor];
                 } else {
                     self.darkModeStyle = NO;
-                    NSLog(@"LFLDarkModeKitLog:Current LightMode");
+                    NSLog(@"LFLDarkModeKitLog: LightMode Now !");
                     return [UIColor grayColor];
                 }
             }];
@@ -118,7 +120,7 @@ NSString *const lightPlistName = @"light.plist";
  * iOS13 - :static value (lightModeColor)
  */
 - (NSString *)colorHexWithHexString:(NSString *)hexString {
-    if ([LFLDarkModeTool isBlankString:hexString]) {
+    if ([NSString isBlankString:hexString]) {
         return nil;
     }
     if (self.isDarkModeStyle) {

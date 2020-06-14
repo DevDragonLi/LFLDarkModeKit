@@ -1,10 +1,10 @@
 PODS:
-  - LFLDarkModeKit (0.4.0):
-    - LFLDarkModeKit/core (= 0.4.0)
-    - LFLDarkModeKit/Tool (= 0.4.0)
-  - LFLDarkModeKit/core (0.4.0):
+  - LFLDarkModeKit (1.0.0):
+    - LFLDarkModeKit/core (= 1.0.0)
+    - LFLDarkModeKit/Tool (= 1.0.0)
+  - LFLDarkModeKit/core (1.0.0):
     - LFLDarkModeKit/Tool
-  - LFLDarkModeKit/Tool (0.4.0)
+  - LFLDarkModeKit/Tool (1.0.0)
 
 DEPENDENCIES:
   - LFLDarkModeKit (from `../`)
@@ -14,8 +14,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LFLDarkModeKit: 9f223a2ff8532abc03703f76a63944001f506546
+  LFLDarkModeKit: 5dc47f53e027a8bce6bb4a94fb71340436eee8c5
 
 PODFILE CHECKSUM: 7ea44e5b56835b93c904f899a22ec396d9423d82
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

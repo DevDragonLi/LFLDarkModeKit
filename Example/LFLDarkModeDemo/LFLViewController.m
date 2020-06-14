@@ -32,19 +32,13 @@
     [self configTestViews];
 }
 
-/// 常见UI标准组件 DEMO
+/// 常见UI标准组件 
 - (void)configTestViews {
     
-#pragma mark 1. UIImageView : xib/story  animationImages
-    
-    /*
-     self.exampleImageView 参考Images.xcassets方式采取系统自动适配
-      UIImageView [UIImage imageAdapterNamed:] 
-     */
-    [self.view addSubview:self.adapterImageView];
-    self.adapterImageView.image = [UIImage imageAdapterNamed:@"exampleImage"];
-    
     UIColor *dyColor = [UIColor colorAdpterWithHex:@"DEMO"];
+    
+#pragma mark 1. UIImageView : xib/story Images.xcassets方式采取系统自动适配
+    
 #pragma mark 2. UIView
     
     /*
@@ -61,25 +55,11 @@
     //    self.exampleLabel.backgroundColor = dyColor;
     //    self.exampleLabel.highlightedTextColor = dyColor;
 #pragma mark 4.  UIButton
-        self.exampleButton.backgroundColor = dyColor;
+    self.exampleButton.backgroundColor = dyColor;
     //    self.exampleButton.layer.cornerRadius = 10.0f;
-    //   self.exampleButton.layer.borderWidth = 8.0f;
+    //    self.exampleButton.layer.borderWidth = 8.0f;
     //    self.exampleButton.layerBorderColorHex = @"DEMO";
-//    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
+    //    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
 }
-
-
-#pragma mark --------getters
-
-- (UIImageView *)adapterImageView {
-    if (!_adapterImageView) {
-        _adapterImageView = [[UIImageView alloc]init];
-        _adapterImageView.frame = CGRectMake(250, 55, 100, 100);
-    }
-    return _adapterImageView;
-}
-
-
-
 
 @end

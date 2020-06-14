@@ -7,7 +7,7 @@
 
 #import "UIColor+LFLDarkMode.h"
 #import "LFLDarkModeManger.h"
-#import "LFLDarkModeTool.h"
+#import "NSString+Blank.h"
 
 @implementation UIColor (LFLDarkMode)
 /**
@@ -16,7 +16,7 @@
 */
 + (UIColor *)colorAdpterWithHex:(NSString *)colorHex alpha:(CGFloat)alpha {
     
-    if ([LFLDarkModeTool isBlankString:colorHex]) {
+    if ([NSString isBlankString:colorHex]) {
         return nil;
     }
    

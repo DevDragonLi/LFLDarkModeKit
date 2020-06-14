@@ -7,7 +7,7 @@
 
 #import "UIView+LFLDarkMode.h"
 #import "UIColor+LFLDarkMode.h"
-#import "LFLDarkModeTool.h"
+#import "NSString+Blank.h"
 #import <objc/runtime.h>
 
 
@@ -18,27 +18,29 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 @implementation UIView (LFLDarkMode)
 
 + (void)load {
-    [LFLDarkModeTool swizzleInstanceForClass:[self class] originSelector:@selector(traitCollectionDidChange:) replaceSelector:@selector(environmentTraitCollectionDidChange:)];
+    
+    method_exchangeImplementations(class_getInstanceMethod(self, @selector(traitCollectionDidChange:)),
+                                   class_getInstanceMethod(self, @selector(environmentTraitCollectionDidChange:)));
 }
+
 
 - (void)environmentTraitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [self environmentTraitCollectionDidChange:previousTraitCollection];
     if (@available(iOS 13.0, *)) {
-        if ([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection] && previousTraitCollection) {
-            if (self.layer.borderWidth > 0) {
+        if (previousTraitCollection && [self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]){
+            if (self.layerBorderColorHex) {
                 UIColor *adpterBorderColor = [UIColor colorAdpterWithHex:self.layerBorderColorHex];
                 self.layer.borderColor = adpterBorderColor.CGColor;
-                [self.layer layoutIfNeeded];
             }
             if (self.layerBackgroundColorHex) {
                 UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:self.layerBackgroundColorHex];
                 self.layer.backgroundColor = layerBackgroundColor.CGColor;
             }
             [self.layer layoutIfNeeded];
+            //        }
         }
     }
 }
-
 
 #pragma mark --------------------------------------------------------------------------------------
 
@@ -50,7 +52,8 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBorderColorHex:(NSString *)layerBorderColorHex {
     
-    if ([LFLDarkModeTool isBlankString:layerBorderColorHex]) {
+    if ([NSString isBlankString:layerBorderColorHex]) {
+        self.layer.borderColor = [UIColor blackColor].CGColor;
         return;
     }
     UIColor *currentBorderColor = [UIColor colorAdpterWithHex:layerBorderColorHex];
@@ -65,7 +68,8 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBackgroundColorHex:(NSString *)layerBackgroundColorHex {
     
-    if ([LFLDarkModeTool isBlankString:layerBackgroundColorHex]) {
+    if ([NSString isBlankString:layerBackgroundColorHex]) {
+        self.layer.backgroundColor = [UIColor blackColor].CGColor;
         return;
     }
     UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:layerBackgroundColorHex];
