@@ -1,15 +1,15 @@
 # LFLDarkModeKit
+> Adapter iOS13+ DarkMode 
 
 [![CI Status](https://img.shields.io/travis/DevdragonLi/LFLDarkModeKit.svg?style=flat)](https://travis-ci.org/DevdragonLi/LFLDarkModeKit)
 [![Version](https://img.shields.io/cocoapods/v/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 [![License](https://img.shields.io/cocoapods/l/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 [![Platform](https://img.shields.io/cocoapods/p/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 
-
-
-> Adapter iOS13+ DarkMode 
-
 - **[LFLDarkModeKit Detail](#use)** 
+
+	- 适配：CGColor并不会动态改变的解决方案
+	- 常规项目的暗黑场景处理。
 
 - **[Project Adapter By Apple API Description](#darkMode)** 
 

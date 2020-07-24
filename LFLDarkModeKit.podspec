@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name             = 'LFLDarkModeKit'
   s.version          = '1.0.0'
   s.summary          = 'LFLDarkModeKit'
-  s.description      = "iOS DarkMode Adapter Kit"
+  s.description      = "iOS DarkMode：Layer Auto Adapter Kit"
   s.homepage         = 'https://github.com/DevDragonli/LFLDarkModeKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'DevDragonli' => 'DragonLi_52171@163.com' }
