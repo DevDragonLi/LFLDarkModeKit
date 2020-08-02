@@ -13,19 +13,19 @@
 		67C7DDB4CD9C22E8C35A2CCEF5EA95C9 /* LFLDarkModeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 10DF63881CE683BC92D334C4EDD51AC8 /* LFLDarkModeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70D4E9E913E7B57E620631CC4282A1B5 /* NSString+Blank.h in Headers */ = {isa = PBXBuildFile; fileRef = 84AD01F69FF15A13706612B8E5B125DA /* NSString+Blank.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F52CAEFD3C42D8CB008396E68649F47 /* NSString+Blank.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F318EC77A791CDC075CF2265D9225C /* NSString+Blank.m */; };
-		9471A5B02C544F35F3DCF6840F355ECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		96B850FCDD6C16F90ED302F4C56072C5 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C3488A402B4727E863C80952907745 /* Pods-LFLDarkModeDemo_Example-dummy.m */; };
+		9F4DBC2D8D3DE49EFAB1EC017AB7CEAF /* Pods-LFLDarkModeDemo_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4EE5A297C322E8CE657C5C6D2573143 /* Pods-LFLDarkModeDemo_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A96D90BAB14934419C75D7142134F699 /* LFLDarkModeKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D7CAA1C8EF81CFA2753AABE22C51 /* LFLDarkModeKit-dummy.m */; };
+		ADF58473DAE7887636639EF463A96B50 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C3488A402B4727E863C80952907745 /* Pods-LFLDarkModeDemo_Example-dummy.m */; };
 		B1BE8365605B976EC3F5E3666448174B /* UIColor+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B86CA78479669FA25C457C92DF54A6 /* UIColor+LFLDarkMode.m */; };
-		B8084252B4F906D3B8B0769D38E84058 /* Pods-LFLDarkModeDemo_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E4EE5A297C322E8CE657C5C6D2573143 /* Pods-LFLDarkModeDemo_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAF0B46096BBD5B800781EB46B8ACBF4 /* UIColor+LFLDarkMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AF60B2FB211033C32E8F3075093A281 /* UIColor+LFLDarkMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB1F6DB840202ABD1C967B7BEEACE469 /* UIView+LFLDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA2DC4A65422569D4A4F978AEE18F2B /* UIView+LFLDarkMode.m */; };
 		D388F1E54D7AECAF8F54F7C8653B2848 /* LFLDarkModeManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D520422B85E78B94A42364EA06130195 /* LFLDarkModeManger.m */; };
+		DC14C258710927B70124D14BE82AC20D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E8B5DDEFAC4A8363EE619B61A638D3FB /* LFLDarkModeManger.h in Headers */ = {isa = PBXBuildFile; fileRef = 9485C8424C3C9333FA80D17A443C6064 /* LFLDarkModeManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AB86C7F8277BC39740CAE8F959A20DF5 /* PBXContainerItemProxy */ = {
+		E43C363D66A3090F8A8C1BC9BD709265 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -78,11 +78,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A23C837089F819EC9A6174A0C5B2FE6 /* Frameworks */ = {
+		8065CF22556AD131924466A084847BB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9471A5B02C544F35F3DCF6840F355ECF /* Foundation.framework in Frameworks */,
+				DC14C258710927B70124D14BE82AC20D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +234,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B2FD1D3996B1355B98B83075358682F /* Headers */ = {
+		BD3129342D117412F2D2C5D4FB1275CB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8084252B4F906D3B8B0769D38E84058 /* Pods-LFLDarkModeDemo_Example-umbrella.h in Headers */,
+				9F4DBC2D8D3DE49EFAB1EC017AB7CEAF /* Pods-LFLDarkModeDemo_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,17 +265,17 @@
 		};
 		EAD882CAA8384EBB698AEF3091A6D7DC /* Pods-LFLDarkModeDemo_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E05A1996E22839051AA5798F4921FEE /* Build configuration list for PBXNativeTarget "Pods-LFLDarkModeDemo_Example" */;
+			buildConfigurationList = 12B1509CA5338A764E9984A5E63F86B0 /* Build configuration list for PBXNativeTarget "Pods-LFLDarkModeDemo_Example" */;
 			buildPhases = (
-				3B2FD1D3996B1355B98B83075358682F /* Headers */,
-				1BD581A39DD2907FABFA56FBCDD9D373 /* Sources */,
-				3A23C837089F819EC9A6174A0C5B2FE6 /* Frameworks */,
-				E24410892D9B5175B07D4525A23724A8 /* Resources */,
+				BD3129342D117412F2D2C5D4FB1275CB /* Headers */,
+				44C3D79B4FEAF3AEEC57FAD4A7F47327 /* Sources */,
+				8065CF22556AD131924466A084847BB5 /* Frameworks */,
+				AB0D674054E064AF2C4EDBE668DEFE47 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A5E4132CB72B9F99E688B33EB1424ABB /* PBXTargetDependency */,
+				018BBD6AD5FAC225FEC59C73596EA470 /* PBXTargetDependency */,
 			);
 			name = "Pods-LFLDarkModeDemo_Example";
 			productName = "Pods-LFLDarkModeDemo_Example";
@@ -311,14 +311,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CE87AF3EDB4217298F0E055213793B2C /* Resources */ = {
+		AB0D674054E064AF2C4EDBE668DEFE47 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E24410892D9B5175B07D4525A23724A8 /* Resources */ = {
+		CE87AF3EDB4217298F0E055213793B2C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,11 +328,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1BD581A39DD2907FABFA56FBCDD9D373 /* Sources */ = {
+		44C3D79B4FEAF3AEEC57FAD4A7F47327 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B850FCDD6C16F90ED302F4C56072C5 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */,
+				ADF58473DAE7887636639EF463A96B50 /* Pods-LFLDarkModeDemo_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,18 +351,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A5E4132CB72B9F99E688B33EB1424ABB /* PBXTargetDependency */ = {
+		018BBD6AD5FAC225FEC59C73596EA470 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LFLDarkModeKit;
 			target = 9F227EB014C3F477C80D7891CAE4856D /* LFLDarkModeKit */;
-			targetProxy = AB86C7F8277BC39740CAE8F959A20DF5 /* PBXContainerItemProxy */;
+			targetProxy = E43C363D66A3090F8A8C1BC9BD709265 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		6062D2636C22B669D00F167FD4C94EA2 /* Debug */ = {
+		28C6A3A5BA3C68DADDD8DF92CD75DE06 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CEA0925A7C6C473FE673E9545A68899 /* Pods-LFLDarkModeDemo_Example.debug.xcconfig */;
+			baseConfigurationReference = 0C29E97C2386B6E1A71F16F9D98FAA32 /* Pods-LFLDarkModeDemo_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -388,10 +388,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		8B32A3C43517E56F9AE60346D8D09147 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -580,9 +581,9 @@
 			};
 			name = Release;
 		};
-		C67CB06A2282E78484442C50AA60A529 /* Release */ = {
+		B97CE88AE8470B902A4E0C84CD4DE5DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C29E97C2386B6E1A71F16F9D98FAA32 /* Pods-LFLDarkModeDemo_Example.release.xcconfig */;
+			baseConfigurationReference = 4CEA0925A7C6C473FE673E9545A68899 /* Pods-LFLDarkModeDemo_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -608,15 +609,23 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12B1509CA5338A764E9984A5E63F86B0 /* Build configuration list for PBXNativeTarget "Pods-LFLDarkModeDemo_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B97CE88AE8470B902A4E0C84CD4DE5DF /* Debug */,
+				28C6A3A5BA3C68DADDD8DF92CD75DE06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3B7A150B80776C475EDB25A4F2E4103C /* Build configuration list for PBXNativeTarget "LFLDarkModeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -631,15 +640,6 @@
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E05A1996E22839051AA5798F4921FEE /* Build configuration list for PBXNativeTarget "Pods-LFLDarkModeDemo_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6062D2636C22B669D00F167FD4C94EA2 /* Debug */,
-				C67CB06A2282E78484442C50AA60A529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

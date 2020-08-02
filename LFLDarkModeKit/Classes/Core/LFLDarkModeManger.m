@@ -73,7 +73,7 @@ NSString *const lightPlistName = @"light.plist";
 }
 
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
-    if ([NSString isBlankString:bundleName]) {
+    if (isEmptyString(bundleName)) {
         return;
     }
     
@@ -120,7 +120,7 @@ NSString *const lightPlistName = @"light.plist";
  * iOS13 - :static value (lightModeColor)
  */
 - (NSString *)colorHexWithHexString:(NSString *)hexString {
-    if ([NSString isBlankString:hexString]) {
+    if (isEmptyString(hexString)) {
         return nil;
     }
     if (self.isDarkModeStyle) {

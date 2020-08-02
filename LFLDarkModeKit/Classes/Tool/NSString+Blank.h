@@ -9,10 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (Blank)
+#define isEmptyString(string) [NSString lflIsBlankString:string]
+
+@interface NSString (LFLBlank)
 
 /// check String
-+ (BOOL)isBlankString:(NSString *)string;
++ (BOOL)lflIsBlankString:(NSString *)string;
 
 @end
 

@@ -33,7 +33,8 @@ script:
   - pod install --project-directory=Example
   - xcodebuild build -workspace Example/LFLDarkModeDemo.xcworkspace -scheme LFLDarkModeDemo_Example -destination 'platform=iOS Simulator,name=iPhone 11 Pro' -configuration Debug | xcpretty -c
 
-  - echo Clean DerivedData
-  - rm -rf ~/Library/Developer/Xcode/DerivedData/
-  - mkdir DerivedData
+  # - echo Clean DerivedData
+  # - rm -rf ~/Library/Developer/Xcode/DerivedData/
+  
+  # - mkdir DerivedData
 

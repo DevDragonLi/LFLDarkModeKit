@@ -16,7 +16,7 @@
 */
 + (UIColor *)colorAdpterWithHex:(NSString *)colorHex alpha:(CGFloat)alpha {
     
-    if ([NSString isBlankString:colorHex]) {
+    if (isEmptyString(colorHex)) {
         return nil;
     }
    

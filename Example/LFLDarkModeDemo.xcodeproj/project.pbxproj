@@ -116,11 +116,11 @@
 		D8F5156F24602D1E007424F6 /* LFLDarkModeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8461464246145F500C41133 /* darkModeAdapterColor.bundle */,
 				D8F5157F24602D1F007424F6 /* LFLAppDelegate.h */,
 				D8F5157424602D1F007424F6 /* LFLAppDelegate.m */,
 				D8F5157324602D1F007424F6 /* LFLViewController.h */,
 				D8F5157D24602D1F007424F6 /* LFLViewController.m */,
-				D8461464246145F500C41133 /* darkModeAdapterColor.bundle */,
 				D8F5157724602D1F007424F6 /* Main.storyboard */,
 				D8F5157524602D1F007424F6 /* LaunchScreen.storyboard */,
 				D8F5157A24602D1F007424F6 /* main.m */,

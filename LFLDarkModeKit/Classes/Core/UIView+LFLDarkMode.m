@@ -52,7 +52,7 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBorderColorHex:(NSString *)layerBorderColorHex {
     
-    if ([NSString isBlankString:layerBorderColorHex]) {
+    if (isEmptyString(layerBorderColorHex)) {
         self.layer.borderColor = [UIColor blackColor].CGColor;
         return;
     }
@@ -68,7 +68,7 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)setLayerBackgroundColorHex:(NSString *)layerBackgroundColorHex {
     
-    if ([NSString isBlankString:layerBackgroundColorHex]) {
+    if (isEmptyString(layerBackgroundColorHex)) {
         self.layer.backgroundColor = [UIColor blackColor].CGColor;
         return;
     }

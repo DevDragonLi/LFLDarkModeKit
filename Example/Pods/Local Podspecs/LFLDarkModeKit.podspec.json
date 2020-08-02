@@ -2,7 +2,7 @@
   "name": "LFLDarkModeKit",
   "version": "1.0.0",
   "summary": "LFLDarkModeKit",
-  "description": "iOS DarkMode Adapter Kit",
+  "description": "iOS DarkMode：Layer Auto Adapter Kit",
   "homepage": "https://github.com/DevDragonli/LFLDarkModeKit",
   "license": {
     "type": "MIT",

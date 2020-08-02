@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LFLDarkModeKit'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'LFLDarkModeKit'
   s.description      = "iOS DarkMode：Layer Auto Adapter Kit"
   s.homepage         = 'https://github.com/DevDragonli/LFLDarkModeKit'

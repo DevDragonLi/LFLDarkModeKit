@@ -8,7 +8,7 @@
 
 - **[LFLDarkModeKit Detail](#use)** 
 
-	- 适配：CGColor并不会动态改变的解决方案
+	- CGColor并不会动态改变的解决方案
 	- 常规项目的暗黑场景处理。
 
 - **[Project Adapter By Apple API Description](#darkMode)** 

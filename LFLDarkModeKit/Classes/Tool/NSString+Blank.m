@@ -7,9 +7,9 @@
 
 #import "NSString+Blank.h"
 
-@implementation NSString (Blank)
+@implementation NSString (LFLBlank)
 
-+ (BOOL)isBlankString:(NSString *)string {
++ (BOOL)lflIsBlankString:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;
     }
