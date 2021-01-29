@@ -1,6 +1,6 @@
 {
   "name": "LFLDarkModeKit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "LFLDarkModeKit",
   "description": "iOS DarkMode：Layer Auto Adapter Kit",
   "homepage": "https://github.com/DevDragonli/LFLDarkModeKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/DevDragonli/LFLDarkModeKit.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -34,7 +34,7 @@
     {
       "name": "Tool",
       "source_files": "LFLDarkModeKit/Classes/Tool/*",
-      "public_header_files": "LFLDarkModeKit/Classes/Tool/NSString+Blank.h"
+      "public_header_files": "LFLDarkModeKit/Classes/Tool/NSString+DarkModeKitBlank.h"
     }
   ]
 }

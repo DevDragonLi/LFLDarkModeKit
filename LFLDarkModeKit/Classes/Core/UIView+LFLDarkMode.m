@@ -7,7 +7,7 @@
 
 #import "UIView+LFLDarkMode.h"
 #import "UIColor+LFLDarkMode.h"
-#import "NSString+Blank.h"
+#import "NSString+DarkModeKitBlank.h"
 #import <objc/runtime.h>
 
 

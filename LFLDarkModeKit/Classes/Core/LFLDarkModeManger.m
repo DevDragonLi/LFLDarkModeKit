@@ -6,7 +6,7 @@
 //
 
 #import "LFLDarkModeManger.h"
-#import "NSString+Blank.h"
+#import "NSString+DarkModeKitBlank.h"
 
 static LFLDarkModeManger *darkModeMangerInstance = nil;
 

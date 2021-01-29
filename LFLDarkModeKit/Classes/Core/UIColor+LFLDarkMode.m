@@ -7,7 +7,7 @@
 
 #import "UIColor+LFLDarkMode.h"
 #import "LFLDarkModeManger.h"
-#import "NSString+Blank.h"
+#import "NSString+DarkModeKitBlank.h"
 
 @implementation UIColor (LFLDarkMode)
 /**

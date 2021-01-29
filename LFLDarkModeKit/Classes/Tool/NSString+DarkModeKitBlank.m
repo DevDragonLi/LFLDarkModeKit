@@ -1,13 +1,13 @@
 //
-//  NSString+Blank.m
+//  NSString+DarkModeKitBlank.m
 //  LFLDarkModeKit
 //
 //  Created by admin on 14/6/2020.
 //
 
-#import "NSString+Blank.h"
+#import "NSString+DarkModeKitBlank.h"
 
-@implementation NSString (LFLBlank)
+@implementation NSString (DarkModeKitBlank)
 
 + (BOOL)lflIsBlankString:(NSString *)string {
     if (string == nil || string == NULL) {
