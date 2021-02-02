@@ -9,7 +9,7 @@
 
 @implementation NSString (DarkModeKitBlank)
 
-+ (BOOL)lflIsBlankString:(NSString *)string {
++ (BOOL)darkModeKit_BlankString:(NSString *)string {
     if (string == nil || string == NULL) {
         return YES;
     }

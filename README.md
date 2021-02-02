@@ -1,17 +1,25 @@
 # LFLDarkModeKit
-> Adapter iOS13+ DarkMode 
+
+> Adapter iOS DarkMode 
+
+###  支持适配 **iOS 9.0+** 项目 
+- 对于iOS13+ 跟随系统暗黑开关
+	- 也支持自定义APP内开关，设置即可【参考下文说明】
+
+- 对于iOS13以下，则默认Light模式
+	- 也可以指定自定义模式，设置即可【参考下文说明】
 
 [![CI Status](https://img.shields.io/travis/DevdragonLi/LFLDarkModeKit.svg?style=flat)](https://travis-ci.org/DevdragonLi/LFLDarkModeKit)
 [![Version](https://img.shields.io/cocoapods/v/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 [![License](https://img.shields.io/cocoapods/l/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 [![Platform](https://img.shields.io/cocoapods/p/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 
-- **[LFLDarkModeKit Detail](#use)** 
+###  **[LFLDarkModeKit Detail](#use)** 
 
-	- CGColor并不会动态改变的解决方案
-	- 常规项目的暗黑场景处理。
+- CGColor并不会动态改变的解决方案
+- 常规项目的暗黑场景处理
 
-- **[Project Adapter By Apple API Description](#darkMode)** 
+### **[Project Adapter By Apple API Description](#darkMode)** 
 
 ## Example
 
@@ -24,7 +32,7 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
 
 ```ruby
 
-  pod 'LFLDarkModeKit', '~> 1.0.0
+  pod 'LFLDarkModeKit', '~> 3.0.0
 
 ```
 
@@ -43,13 +51,17 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
 │   └── UIView+LFLDarkMode.m
 ├── LFLDarkModeKit.h
 └── Tool
-    ├── NSString+Blank.h
-    └── NSString+Blank.m
+    ├── NSString+DarkModeKitBlank.h
+    └── NSString+DarkModeKitBlank.m
+    └── UIWindow+DarkModeKitKeyWondow.h
+    └── UIWindow+DarkModeKitKeyWondow.m
+  
 ```
 
 > now only support Hex Color 
 
 - Project create bundle source  
+
 	- **完全各项目自定义色值字符串映射对应颜色**
 		- Example：@“DEMO” 在dark和light分别对应不同的真实色值一一映射，后续可支持新增模式
 	- Example：darkModeAdapterColor.bundle （Color Set ）
@@ -59,10 +71,21 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
 - didFinishLaunchingWithOptions: configDarkModeColorBundleName 
 
 ```
+
  - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
+    
 	    return YES;
 	}
+
+```
+
+- 用户自定义模式 【不跟随系统开关】
+
+```
+    [LFLDarkModeManger.sharedInstance configUserDarkMode:YES];
+
+    [LFLDarkModeManger.sharedInstance isUserDarkMode];
 
 ```
 

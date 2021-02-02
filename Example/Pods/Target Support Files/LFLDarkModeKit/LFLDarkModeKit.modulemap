@@ -1,6 +1,0 @@
-framework module LFLDarkModeKit {
-  umbrella header "LFLDarkModeKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

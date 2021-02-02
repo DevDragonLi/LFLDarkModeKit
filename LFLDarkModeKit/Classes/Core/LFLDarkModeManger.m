@@ -7,6 +7,7 @@
 
 #import "LFLDarkModeManger.h"
 #import "NSString+DarkModeKitBlank.h"
+#import "UIWindow+DarkModeKitKeyWondow.h"
 
 static LFLDarkModeManger *darkModeMangerInstance = nil;
 
@@ -20,6 +21,8 @@ NSString *const lightPlistName = @"light.plist";
 @interface LFLDarkModeManger ()
 
 @property (nonatomic, readwrite,getter=isDarkModeStyle) BOOL darkModeStyle;
+
+@property (nonatomic, assign) BOOL customDarkModeStyle;
 
 @property (nonatomic, strong) NSDictionary * darkModeColorDic;
 
@@ -43,8 +46,7 @@ NSString *const lightPlistName = @"light.plist";
 
 #pragma mark - Life Cycle
 
-+ (instancetype)allocWithZone:(NSZone *)zone
-{
++ (instancetype)allocWithZone:(NSZone *)zone {
     return [self sharedInstance];
 }
 
@@ -72,6 +74,27 @@ NSString *const lightPlistName = @"light.plist";
     darkModeMangerInstance = nil;
 }
 
+- (BOOL)isDarkModeStyle {
+    
+    if (self.customDarkModeStyle) {
+        return YES;
+    } else {
+        if (@available(iOS 13.0, *)) {
+            return UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark;
+        } else {
+            return NO;
+        }
+    }
+}
+
+- (BOOL)isUserDarkMode {
+    return self.customDarkModeStyle;
+}
+
+- (void)configUserDarkMode:(BOOL)status {
+    _customDarkModeStyle = status;
+}
+
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
     if (isEmptyString(bundleName)) {
         return;
@@ -84,36 +107,35 @@ NSString *const lightPlistName = @"light.plist";
     self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfFile:lightModePath];
 }
 
-
-- (BOOL)isDarkModeStyle {
-    if (@available(iOS 13.0, *)) {
-        return UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark;
-    } else {
-        return NO;
-    }
-}
-
 - (void)darkModeMonitor {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (@available(iOS 13.0, *)) {
             UIColor *dynamicColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                     self.darkModeStyle = YES;
-                    NSLog(@"LFLDarkModeKitLog:DarkMode Now !");
+                    NSLog(@"\n😄DarkMode Now ! \n By【LFLDarkModeKitTips】");
                     return [UIColor blackColor];
                 } else {
                     self.darkModeStyle = NO;
-                    NSLog(@"LFLDarkModeKitLog: LightMode Now !");
+                    NSLog(@"\n😄LightMode Now ! \n【LFLDarkModeKitTips】");
                     return [UIColor grayColor];
                 }
             }];
             UIView *unVisibleView = [[UIView alloc]initWithFrame:CGRectZero];
             unVisibleView.backgroundColor = dynamicColor;
             unVisibleView.hidden = YES;
-            [[UIApplication sharedApplication].keyWindow addSubview:unVisibleView];
+            UIWindow *keyWindow = [UIWindow lfl_keyWindow];
+            if (keyWindow) {
+                [keyWindow addSubview:unVisibleView];
+            } else {
+                NSAssert(0,@"⚠️⚠️⚠️：keyWindow  Error【LFLDarkModeKitTips】");
+            }
         }
     });
 }
+
+
+
 
 /*
  * iOS13 + :dynamic value
@@ -123,7 +145,7 @@ NSString *const lightPlistName = @"light.plist";
     if (isEmptyString(hexString)) {
         return nil;
     }
-    if (self.isDarkModeStyle) {
+    if ([self isDarkModeStyle]) {
         return [self.darkModeColorDic objectForKey:hexString];
     } else {
         return [self.lightModeColorDic objectForKey:hexString];

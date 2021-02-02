@@ -11,9 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLDarkModeManger : NSObject
 
-///current darkModeStyle
+///Current DarkModeStyle 【System iOS 13+ Support 】
 @property (nonatomic, readonly,getter=isDarkModeStyle) BOOL darkModeStyle;
-
 /**
  * darkModeManger
  */
@@ -23,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
  * destroy the LFLDarkModeManger object free sources
  */
 + (void )destroySharedInstance;
+
+/// userDarkModeStyle   【Default is NO】
+- (BOOL)isUserDarkMode;
+
+/// Setting  userDarkModeStyle
+- (void)configUserDarkMode:(BOOL)status;
 
 - (instancetype)init __attribute__((unavailable("Disabled !!! Please Use +sharedInstance instead")));
 

@@ -1,6 +1,0 @@
-framework module Pods_LFLDarkModeDemo_Example {
-  umbrella header "Pods-LFLDarkModeDemo_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

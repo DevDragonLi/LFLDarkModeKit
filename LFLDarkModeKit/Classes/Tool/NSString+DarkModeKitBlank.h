@@ -9,12 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define isEmptyString(string) [NSString lflIsBlankString:string]
+#define isEmptyString(string) [NSString darkModeKit_BlankString:string]
 
 @interface NSString (DarkModeKitBlank)
 
-/// check String
-+ (BOOL)lflIsBlankString:(NSString *)string;
+/// Check String is Empty 
++ (BOOL)darkModeKit_BlankString:(NSString *)string;
 
 @end
 
