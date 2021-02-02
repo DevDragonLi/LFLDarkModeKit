@@ -34,7 +34,7 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
 
 ```ruby
 
-  pod 'LFLDarkModeKit', '~> 3.0.0
+  pod 'LFLDarkModeKit', '~> 3.1'
 
 ```
 

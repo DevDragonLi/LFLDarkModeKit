@@ -28,6 +28,8 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
 
 @property (nonatomic, assign) BOOL customDarkModeStyle;
 
+@property (nonatomic, assign) BOOL customDarkMode;
+
 @property (nonatomic, strong) NSDictionary * darkModeColorDic;
 
 @property (nonatomic, strong) NSDictionary * lightModeColorDic;
@@ -77,21 +79,22 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
 
 #pragma mark --- mode value 
 - (BOOL)isUserDarkMode {
-    return self.customDarkModeStyle;
+    return self.customDarkMode;
 }
 
 - (void)configUserDarkMode:(BOOL)status {
-    if (_customDarkModeStyle == status) {
+    if (_customDarkMode == status) {
         return;
     } else {
-        _customDarkModeStyle = status;
+        _customDarkMode = status;
+        _customDarkModeStyle = YES;
         [[LFLDarkModeManger sharedInstance] postDarkModeChangeNotificationName];
     }
 }
 
 - (BOOL)isDarkModeStyle {
     if (self.customDarkModeStyle) {
-        return YES;
+        return self.customDarkMode;
     } else {
         if (@available(iOS 13.0, *)) {
             return UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark;
