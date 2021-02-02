@@ -12,12 +12,15 @@
 + (UIWindow *)lfl_keyWindow {
     if (@available(iOS 13.0, *)) {
         for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
-            if (windowScene.activationState == UISceneActivationStateForegroundActive) {
-                for (UIWindow *window in windowScene.windows) {
-                    if (window.isKeyWindow) {
-                        return window;
-                        break;
-                    }
+    /* fixbug:
+            windowScene.activationState == UISceneActivationStateForegroundActive
+     if APP enter the background immediately after Launch,
+     so the foreground judgment logic needs to be removed
+     */
+            for (UIWindow *window in windowScene.windows) {
+                if (window.isKeyWindow) {
+                    return window;
+                    break;
                 }
             }
         }

@@ -21,7 +21,7 @@
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
     
-    [LFLDarkModeManger destroySharedInstance];
+    [LFLDarkModeManger.sharedInstance destroySharedInstance];
 }
 
 

@@ -15,8 +15,12 @@ static dispatch_once_t onceToken;
 
 static bool isFirstAccess = YES;
 
-NSString *const darkPlistName = @"dark.plist";
-NSString *const lightPlistName = @"light.plist";
+NSString * _Nonnull const darkPlistName = @"dark.plist";
+NSString * _Nonnull const lightPlistName = @"light.plist";
+
+NSString * _Nonnull const LFLDarkModeChangeNotification = @"LFLDarkModeChangeNotificationKey";
+
+NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
 
 @interface LFLDarkModeManger ()
 
@@ -27,6 +31,8 @@ NSString *const lightPlistName = @"light.plist";
 @property (nonatomic, strong) NSDictionary * darkModeColorDic;
 
 @property (nonatomic, strong) NSDictionary * lightModeColorDic;
+
+@property (nonatomic, assign) BOOL isMonitorLoaded;
 
 @end
 
@@ -69,13 +75,21 @@ NSString *const lightPlistName = @"light.plist";
     return self;
 }
 
-+ (void)destroySharedInstance {
-    onceToken = 0;
-    darkModeMangerInstance = nil;
+#pragma mark --- mode value 
+- (BOOL)isUserDarkMode {
+    return self.customDarkModeStyle;
+}
+
+- (void)configUserDarkMode:(BOOL)status {
+    if (_customDarkModeStyle == status) {
+        return;
+    } else {
+        _customDarkModeStyle = status;
+        [[LFLDarkModeManger sharedInstance] postDarkModeChangeNotificationName];
+    }
 }
 
 - (BOOL)isDarkModeStyle {
-    
     if (self.customDarkModeStyle) {
         return YES;
     } else {
@@ -85,14 +99,6 @@ NSString *const lightPlistName = @"light.plist";
             return NO;
         }
     }
-}
-
-- (BOOL)isUserDarkMode {
-    return self.customDarkModeStyle;
-}
-
-- (void)configUserDarkMode:(BOOL)status {
-    _customDarkModeStyle = status;
 }
 
 - (void)configDarkModeColorBundleName:(NSString *)bundleName {
@@ -107,17 +113,33 @@ NSString *const lightPlistName = @"light.plist";
     self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfFile:lightModePath];
 }
 
+- (void)postDarkModeChangeNotificationName {
+    if (self.isMonitorLoaded) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LFLDarkModeChangeNotification object:@{LFLDarkModeChangeNotificationKey:@([self isDarkModeStyle])}];
+    }
+}
+
+- (void)updateMonitorStatus {
+    if (!self.isMonitorLoaded) {
+        self.isMonitorLoaded = YES;
+    }
+}
+
 - (void)darkModeMonitor {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (@available(iOS 13.0, *)) {
             UIColor *dynamicColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
                     self.darkModeStyle = YES;
-                    NSLog(@"\n😄DarkMode Now ! \n By【LFLDarkModeKitTips】");
+                    [self postDarkModeChangeNotificationName];
+                    [self updateMonitorStatus];
+                    NSLog(@"\n😄 DarkMode Now ! \n😄【LFLDarkModeKitTips】");
                     return [UIColor blackColor];
                 } else {
                     self.darkModeStyle = NO;
-                    NSLog(@"\n😄LightMode Now ! \n【LFLDarkModeKitTips】");
+                    [self postDarkModeChangeNotificationName];
+                    [self updateMonitorStatus];
+                    NSLog(@"\n😄 LightMode Now ! \n😄 【LFLDarkModeKitTips】");
                     return [UIColor grayColor];
                 }
             }];
@@ -133,10 +155,6 @@ NSString *const lightPlistName = @"light.plist";
         }
     });
 }
-
-
-
-
 /*
  * iOS13 + :dynamic value
  * iOS13 - :static value (lightModeColor)
@@ -150,6 +168,13 @@ NSString *const lightPlistName = @"light.plist";
     } else {
         return [self.lightModeColorDic objectForKey:hexString];
     }
+}
+
+- (void)destroySharedInstance {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        onceToken = 0;
+        darkModeMangerInstance = nil;
+    });
 }
 
 @end

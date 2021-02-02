@@ -30,7 +30,20 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
     [self configTestViews];
+    // APP 启动后，进入设置 ->显示与亮度 ：切换浅色和深色 ——> 切换OK ✅
+    // 20秒后，设置使用用户设定后，则不可以继续切换【可App自行新增对应功能界面绑定】
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [LFLDarkModeManger.sharedInstance configUserDarkMode:YES];
+    });
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_darkModeNoti:) name:LFLDarkModeChangeNotification object:nil];
+    
 }
+
+- (void)_darkModeNoti:(NSNotification *)noti {
+    NSDictionary *darkModeDic = noti.object;
+    NSLog(@"\n通知：暗黑模式切换检测%@",darkModeDic);
+}
+
 
 /// 常见UI标准组件 
 - (void)configTestViews {

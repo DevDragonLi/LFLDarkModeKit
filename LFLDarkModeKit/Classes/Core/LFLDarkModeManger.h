@@ -7,6 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
+/// APP切换主题模式，会抛出通知
+FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotification;
+
+FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotificationKey;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLDarkModeManger : NSObject
@@ -21,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * destroy the LFLDarkModeManger object free sources
  */
-+ (void )destroySharedInstance;
+- (void )destroySharedInstance;
 
 /// userDarkModeStyle   【Default is NO】
 - (BOOL)isUserDarkMode;

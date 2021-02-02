@@ -9,6 +9,8 @@
 - 对于iOS13以下，则默认Light模式
 	- 也可以指定自定义模式，设置即可【参考下文说明】
 
+- 获取状态切换【模式切换检测】
+
 [![CI Status](https://img.shields.io/travis/DevdragonLi/LFLDarkModeKit.svg?style=flat)](https://travis-ci.org/DevdragonLi/LFLDarkModeKit)
 [![Version](https://img.shields.io/cocoapods/v/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
 [![License](https://img.shields.io/cocoapods/l/LFLDarkModeKit.svg?style=flat)](https://cocoapods.org/pods/LFLDarkModeKit)
@@ -86,6 +88,19 @@ LFLDarkModeKit is available through [CocoaPods](https://cocoapods.org). To insta
     [LFLDarkModeManger.sharedInstance configUserDarkMode:YES];
 
     [LFLDarkModeManger.sharedInstance isUserDarkMode];
+
+```
+
+- 获取状态切换【模式切换检测】
+
+```
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_darkModeNoti:) name:LFLDarkModeChangeNotification object:nil];
+    
+- (void)_darkModeNoti:(NSNotification *)noti {
+NSDictionary *darkModeDic = noti.object;
+NSLog(@"\n通知：暗黑模式切换检测%@",darkModeDic);
+}
 
 ```
 
