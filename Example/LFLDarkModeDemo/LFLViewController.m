@@ -7,7 +7,8 @@
 //
 
 #import "LFLViewController.h"
-#import <LFLDarkModeKit.h>
+#import <LFLDarkModeKit/LFLDarkModeKit.h>
+#import "LFLDarkModeTool.h"
 
 @interface LFLViewController ()
 
@@ -30,14 +31,19 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
     [self configTestViews];
+    
+    [self _darkModeChangeNotificationDemo];
+}
+
+- (void)_darkModeChangeNotificationDemo {
     // APP 启动后，进入设置 ->显示与亮度 ：切换浅色和深色 ——> 切换OK ✅
     // 20秒后，设置使用用户设定后，则不可以继续切换【可App自行新增对应功能界面绑定】
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [LFLDarkModeManger.sharedInstance configUserDarkMode:YES];
     });
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_darkModeNoti:) name:LFLDarkModeChangeNotification object:nil];
-    
 }
+
 
 - (void)_darkModeNoti:(NSNotification *)noti {
     NSDictionary *darkModeDic = noti.object;
@@ -45,14 +51,15 @@
 }
 
 
-/// 常见UI标准组件 
+/*
+                常见UI标准组件
+1. UIImageView : xib/story Images.xcassets方式采取系统自动适配
+ 
+*/
+
 - (void)configTestViews {
     
-    UIColor *dyColor = [UIColor colorAdpterWithHex:@"DEMO"];
-    
-#pragma mark 1. UIImageView : xib/story Images.xcassets方式采取系统自动适配
-    
-#pragma mark 2. UIView
+    UIColor *dyColor = [UIColor colorAdpterWithHex:[LFLDarkModeTool PColor0String]];
     
     /*
      UIView及自定义View存在圆角的情况下，CALayer层动态颜色处理
@@ -60,7 +67,7 @@
      */
     self.customView.layer.cornerRadius = 50.0f;
     self.customView.layer.borderWidth = 20.0f;
-    self.customView.layerBorderColorHex = @"DEMO";
+    self.customView.layerBorderColorHex = [LFLDarkModeTool PColor0String];
     
 #pragma mark 3. UILabel
     //  support：textColor，backgroundColor,highlightedTextColor
@@ -74,5 +81,6 @@
     //    self.exampleButton.layerBorderColorHex = @"DEMO";
     //    [self.exampleButton setTitleColor:dyColor forState:UIControlStateSelected|UIControlStateHighlighted];
 }
+
 
 @end

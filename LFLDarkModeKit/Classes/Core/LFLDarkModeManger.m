@@ -16,6 +16,7 @@ static dispatch_once_t onceToken;
 static bool isFirstAccess = YES;
 
 NSString * _Nonnull const darkPlistName = @"dark.plist";
+
 NSString * _Nonnull const lightPlistName = @"light.plist";
 
 NSString * _Nonnull const LFLDarkModeChangeNotification = @"LFLDarkModeChangeNotificationKey";
@@ -78,6 +79,7 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
 }
 
 #pragma mark --- mode value 
+
 - (BOOL)isUserDarkMode {
     return self.customDarkMode;
 }
@@ -104,16 +106,28 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
     }
 }
 
-- (void)configDarkModeColorBundleName:(NSString *)bundleName {
-    if (isEmptyString(bundleName)) {
+- (void)configDarkModeColorBundleURL:(nullable NSURL *)bundleURL {
+    if (isEmptyString(bundleURL.path)) {
         return;
     }
+    NSURL *darkModeURL = [bundleURL URLByAppendingPathComponent:darkPlistName];
+    NSURL *lightModeURL = [bundleURL URLByAppendingPathComponent:lightPlistName];
     
-    NSString * bundlePath = [[NSBundle mainBundle] pathForResource:bundleName ofType:@"bundle"];
-    NSString *darkModePath = [bundlePath stringByAppendingPathComponent:darkPlistName];
-    NSString *lightModePath = [bundlePath stringByAppendingPathComponent:lightPlistName];
-    self.darkModeColorDic = [NSDictionary dictionaryWithContentsOfFile:darkModePath];
-    self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfFile:lightModePath];
+    NSError *darkModeLoadError;
+    
+    if (@available(iOS 11.0, *)) {
+        
+        self.darkModeColorDic = [NSDictionary dictionaryWithContentsOfURL:darkModeURL error:&darkModeLoadError];
+        
+        NSAssert1(!darkModeLoadError.userInfo, @"【LFLDarkModeKitTips Debug Msg】%@", darkModeLoadError.userInfo);
+        
+        self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfURL:lightModeURL error:&darkModeLoadError];
+        
+        NSAssert1(!darkModeLoadError.userInfo, @"【LFLDarkModeKitTips Debug Msg】%@", darkModeLoadError.userInfo);
+    } else {
+        self.darkModeColorDic = [NSDictionary dictionaryWithContentsOfURL:darkModeURL];
+        self.lightModeColorDic = [NSDictionary dictionaryWithContentsOfURL:lightModeURL];
+    }
 }
 
 - (void)postDarkModeChangeNotificationName {
@@ -136,13 +150,13 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
                     self.darkModeStyle = YES;
                     [self postDarkModeChangeNotificationName];
                     [self updateMonitorStatus];
-                    NSLog(@"\n😄 DarkMode Now ! \n😄【LFLDarkModeKitTips】");
+                    NSLog(@"\n😄 DarkMode Now ! \n😄【LFLDarkModeKitTips Debug Msg】");
                     return [UIColor blackColor];
                 } else {
                     self.darkModeStyle = NO;
                     [self postDarkModeChangeNotificationName];
                     [self updateMonitorStatus];
-                    NSLog(@"\n😄 LightMode Now ! \n😄 【LFLDarkModeKitTips】");
+                    NSLog(@"\n😄 LightMode Now ! \n😄 【LFLDarkModeKitTips Debug Msg】");
                     return [UIColor grayColor];
                 }
             }];
@@ -153,7 +167,7 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
             if (keyWindow) {
                 [keyWindow addSubview:unVisibleView];
             } else {
-                NSAssert(0,@"⚠️⚠️⚠️：keyWindow  Error【LFLDarkModeKitTips】");
+                NSAssert(0,@"⚠️⚠️⚠️：keyWindow  Error【LFLDarkModeKitTips Debug Msg】");
             }
         }
     });

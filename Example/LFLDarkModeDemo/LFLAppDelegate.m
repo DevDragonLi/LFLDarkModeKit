@@ -12,12 +12,19 @@
 @implementation LFLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleName:@"darkModeAdapterColor"];
-    
-    [LFLDarkModeManger.sharedInstance configUserDarkMode:NO];
+    [self LFLDarkModeMangerDemo];
     
     return YES;
 }
+
+- (void)LFLDarkModeMangerDemo {
+    
+    NSURL *darkModeBundleURL = [[NSBundle mainBundle] URLForResource:@"darkModeAdapterColor" withExtension:@"bundle"];
+    [[LFLDarkModeManger sharedInstance] configDarkModeColorBundleURL:darkModeBundleURL];
+     
+     [LFLDarkModeManger.sharedInstance configUserDarkMode:NO];
+}
+
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
     

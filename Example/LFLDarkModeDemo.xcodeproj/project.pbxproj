@@ -17,6 +17,7 @@
 		D8F5158424602D1F007424F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F5157A24602D1F007424F6 /* main.m */; };
 		D8F5158524602D1F007424F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F5157B24602D1F007424F6 /* Images.xcassets */; };
 		D8F5158724602D1F007424F6 /* LFLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F5157D24602D1F007424F6 /* LFLViewController.m */; };
+		DE2BACCB25CA3FC00068171F /* LFLDarkModeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2BACCA25CA3FC00068171F /* LFLDarkModeTool.m */; };
 		E3FE59C31AA2AFA2490BAF9C /* Pods_LFLDarkModeDemo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4BA1DE042C4D96398C8D8B /* Pods_LFLDarkModeDemo_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		D8F5157D24602D1F007424F6 /* LFLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLViewController.m; sourceTree = "<group>"; };
 		D8F5157F24602D1F007424F6 /* LFLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLAppDelegate.h; sourceTree = "<group>"; };
 		DC37AAA5F1CBB6F57833472F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DE2BACC925CA3FC00068171F /* LFLDarkModeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLDarkModeTool.h; sourceTree = "<group>"; };
+		DE2BACCA25CA3FC00068171F /* LFLDarkModeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLDarkModeTool.m; sourceTree = "<group>"; };
 		E79D71C53FACA13565840DEA /* Pods-LFLDarkModeDemo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LFLDarkModeDemo_Example.release.xcconfig"; path = "Target Support Files/Pods-LFLDarkModeDemo_Example/Pods-LFLDarkModeDemo_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,8 @@
 				D8F5157424602D1F007424F6 /* LFLAppDelegate.m */,
 				D8F5157324602D1F007424F6 /* LFLViewController.h */,
 				D8F5157D24602D1F007424F6 /* LFLViewController.m */,
+				DE2BACC925CA3FC00068171F /* LFLDarkModeTool.h */,
+				DE2BACCA25CA3FC00068171F /* LFLDarkModeTool.m */,
 				D8F5157724602D1F007424F6 /* Main.storyboard */,
 				D8F5157524602D1F007424F6 /* LaunchScreen.storyboard */,
 				D8F5157A24602D1F007424F6 /* main.m */,
@@ -251,6 +256,7 @@
 				D8F5158724602D1F007424F6 /* LFLViewController.m in Sources */,
 				D8F5158424602D1F007424F6 /* main.m in Sources */,
 				D8F5158124602D1F007424F6 /* LFLAppDelegate.m in Sources */,
+				DE2BACCB25CA3FC00068171F /* LFLDarkModeTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

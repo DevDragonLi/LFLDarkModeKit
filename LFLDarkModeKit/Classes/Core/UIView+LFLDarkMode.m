@@ -10,7 +10,6 @@
 #import "NSString+DarkModeKitBlank.h"
 #import <objc/runtime.h>
 
-
 static void *layerBorderColorHexProperty = &layerBorderColorHexProperty;
 
 static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
@@ -26,18 +25,23 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 
 - (void)environmentTraitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [self environmentTraitCollectionDidChange:previousTraitCollection];
+    
     if (@available(iOS 13.0, *)) {
+        
         if (previousTraitCollection && [self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]){
+            
             if (self.layerBorderColorHex) {
                 UIColor *adpterBorderColor = [UIColor colorAdpterWithHex:self.layerBorderColorHex];
                 self.layer.borderColor = adpterBorderColor.CGColor;
             }
+            
             if (self.layerBackgroundColorHex) {
                 UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:self.layerBackgroundColorHex];
                 self.layer.backgroundColor = layerBackgroundColor.CGColor;
             }
+            
             [self.layer layoutIfNeeded];
-            //        }
+            
         }
     }
 }
@@ -45,25 +49,16 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
 #pragma mark --------------------------------------------------------------------------------------
 
 
-- (NSString *)layerBorderColorHex {
-    
-    return objc_getAssociatedObject(self, layerBorderColorHexProperty);
-}
-
 - (void)setLayerBorderColorHex:(NSString *)layerBorderColorHex {
     
     if (isEmptyString(layerBorderColorHex)) {
         self.layer.borderColor = [UIColor blackColor].CGColor;
         return;
     }
+    
     UIColor *currentBorderColor = [UIColor colorAdpterWithHex:layerBorderColorHex];
     self.layer.borderColor = currentBorderColor.CGColor;
     objc_setAssociatedObject(self, layerBorderColorHexProperty, layerBorderColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (NSString *)layerBackgroundColorHex {
-    
-    return objc_getAssociatedObject(self, layerBackgroundColorHexProperty);
 }
 
 - (void)setLayerBackgroundColorHex:(NSString *)layerBackgroundColorHex {
@@ -72,9 +67,20 @@ static void *layerBackgroundColorHexProperty = &layerBackgroundColorHexProperty;
         self.layer.backgroundColor = [UIColor blackColor].CGColor;
         return;
     }
+    
     UIColor *layerBackgroundColor = [UIColor colorAdpterWithHex:layerBackgroundColorHex];
     self.layer.backgroundColor = layerBackgroundColor.CGColor;
     objc_setAssociatedObject(self, layerBackgroundColorHexProperty, layerBackgroundColorHex, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSString *)layerBackgroundColorHex {
+    
+    return objc_getAssociatedObject(self, layerBackgroundColorHexProperty);
+}
+
+- (NSString *)layerBorderColorHex {
+    
+    return objc_getAssociatedObject(self, layerBorderColorHexProperty);
 }
 
 @end

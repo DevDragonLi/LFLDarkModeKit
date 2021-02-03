@@ -11,7 +11,7 @@
 
 @implementation UIColor (LFLDarkMode)
 /**
- * 1.color hex exapme: @"DEMO"  <==> 000000
+ * 1.color hex exapme: @"PColor0"  <==> 000000
  * 2.return current color Hex with DarkMode !
 */
 + (UIColor *)colorAdpterWithHex:(NSString *)colorHex alpha:(CGFloat)alpha {

@@ -7,17 +7,18 @@
 
 #import <Foundation/Foundation.h>
 
-/// APP切换主题模式，会抛出通知
+/// When the APP switches theme mode, it throws a Notification
 FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotification;
-
+/// APP Theme mode Changed  throws NotificationKey
 FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotificationKey;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLDarkModeManger : NSObject
 
-///Current DarkModeStyle 【System iOS 13+ Support 】
+///Current System DarkModeStyle
 @property (nonatomic, readonly,getter=isDarkModeStyle) BOOL darkModeStyle;
+
 /**
  * darkModeManger
  */
@@ -36,13 +37,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init __attribute__((unavailable("Disabled !!! Please Use +sharedInstance instead")));
 
-/// NOTE：darkMode config Plist bundle Name
-- (void)configDarkModeColorBundleName:(NSString *)bundleName;
+/// NOTE：darkMode config Plist bundleURL
+- (void)configDarkModeColorBundleURL:(nullable NSURL *)bundleURL;
 
 /**
  * dynamicTransform  Color Value  < ==>
- * DarkMode : input @"DEMO"   return  FFFFFF
- * LightMode : input @"DEMO"   return  000000 
+ * DarkMode : input @"PColor0"   return  FFFFFF
+ * LightMode : input @"PColor0"   return  000000 
  */
 - (NSString *)colorHexWithHexString:(NSString *)hexString;
 
