@@ -3,6 +3,9 @@
 > Adapter iOS DarkMode 
 
 ### 适配支持 **iOS 9.0+** 项目 
+
+###  Support:ObjC/Swift项目(纯OC/Swift/混编)均可使用
+
 - 对于iOS13+ 跟随系统暗黑开关
 	- 也支持自定义APP内开关，设置即可【参考下文说明】
 - 对于iOS13以下，则默认Light模式
