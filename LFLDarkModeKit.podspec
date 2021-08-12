@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LFLDarkModeKit'
-  s.version          = '3.2.1'
+  s.version          = '3.5.0'
   s.summary          = 'LFLDarkModeKit'
   s.description      = "
   iOS DarkMode：Layer Auto Adapter Kit
@@ -12,17 +12,19 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/DevDragonli/LFLDarkModeKit.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '9.0'
+  
   s.public_header_files = 'LFLDarkModeKit/Classes/LFLDarkModeKit.h'
   s.source_files = 'LFLDarkModeKit/Classes/LFLDarkModeKit.h'
+  
   s.subspec 'core' do |ss|
     ss.source_files = 'LFLDarkModeKit/Classes/Core/*'
     ss.public_header_files = 'LFLDarkModeKit/Classes/core/**.h'
     ss.dependency 'LFLDarkModeKit/Tool'
   end
+  
   s.subspec 'Tool' do |ss|
     ss.source_files = 'LFLDarkModeKit/Classes/Tool/*'
     ss.public_header_files = 'LFLDarkModeKit/Classes/Tool/NSString+DarkModeKitBlank.h','LFLDarkModeKit/Classes/Tool/UIWindow+DarkModeKitKeyWondow.h'
   end
-  
-  
+    
 end

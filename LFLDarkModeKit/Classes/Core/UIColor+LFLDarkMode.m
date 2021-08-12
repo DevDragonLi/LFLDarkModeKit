@@ -14,12 +14,11 @@
  * 1.color hex exapme: @"PColor0"  <==> 000000
  * 2.return current color Hex with DarkMode !
 */
-+ (UIColor *)colorAdpterWithHex:(NSString *)colorHex alpha:(CGFloat)alpha {
++ (nullable UIColor *)colorAdpterWithHex:(NSString *)colorHex alpha:(CGFloat)alpha {
     
     if (isEmptyString(colorHex)) {
         return nil;
     }
-   
     if (@available(iOS 13.0,*)) {
         UIColor *currentShowColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
             NSString *hexString = [[LFLDarkModeManger sharedInstance] colorHexWithHexString:colorHex];
@@ -32,11 +31,11 @@
     }
 }
 
-+ (UIColor *)colorAdpterWithHex:(NSString *)colorHex {
++ (nullable UIColor *)colorAdpterWithHex:(NSString *)colorHex {
     return [self colorAdpterWithHex:colorHex alpha:1.0];
 }
 
-+ (UIColor *)colorFromHexString:(NSString *)colorHexStr
++ (nullable UIColor *)colorFromHexString:(NSString *)colorHexStr
                               alpha:(CGFloat)alpha {
     
     CGFloat R = 0.0,G = 0.0,B = 0.0,systemAlpha = 1.0;

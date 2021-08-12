@@ -9,6 +9,7 @@
 
 /// When the APP switches theme mode, it throws a Notification
 FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotification;
+
 /// APP Theme mode Changed  throws NotificationKey
 FOUNDATION_EXTERN NSString * _Nonnull const LFLDarkModeChangeNotificationKey;
 
@@ -24,11 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)sharedInstance;
 
-/**
- * destroy the LFLDarkModeManger object free sources
- */
-- (void )destroySharedInstance;
-
 /// userDarkModeStyle   【Default is NO】
 - (BOOL)isUserDarkMode;
 
@@ -43,9 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * dynamicTransform  Color Value  < ==>
  * DarkMode : input @"PColor0"   return  FFFFFF
- * LightMode : input @"PColor0"   return  000000 
+ * LightMode : input @"PColor0"   return  000000
  */
 - (NSString *)colorHexWithHexString:(NSString *)hexString;
+
+/**
+ * destroy the LFLDarkModeManger object free sources
+ */
+- (void )destroySharedInstance;
 
 @end
 

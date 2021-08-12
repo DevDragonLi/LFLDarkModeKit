@@ -9,6 +9,12 @@
 #import "NSString+DarkModeKitBlank.h"
 #import "UIWindow+DarkModeKitKeyWondow.h"
 
+typedef enum : NSUInteger {
+    lightMode = 0,
+    darkMode = 1,
+    unKnowMode = -1024,
+} LFLModeStyle;
+
 static LFLDarkModeManger *darkModeMangerInstance = nil;
 
 static dispatch_once_t onceToken;
@@ -47,7 +53,7 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
     dispatch_once(&onceToken, ^{
         isFirstAccess = NO;
         darkModeMangerInstance = [[super allocWithZone:NULL] init];
-        darkModeMangerInstance.darkModeStyle = [darkModeMangerInstance isDarkModeStyle];
+        [darkModeMangerInstance configCurrentMode];
         [darkModeMangerInstance darkModeMonitor];
     });
     return darkModeMangerInstance;
@@ -99,10 +105,28 @@ NSString * _Nonnull const LFLDarkModeChangeNotificationKey = @"LFLDarkModeKey";
         return self.customDarkMode;
     } else {
         if (@available(iOS 13.0, *)) {
-            return UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark;
+            return _darkModeStyle;
         } else {
             return NO;
         }
+    }
+}
+
+- (void)configCurrentMode {
+    
+    if (@available(iOS 13.0, *)) {
+        UIView *unVisibleView = [[UIView alloc]initWithFrame:CGRectZero];
+        unVisibleView.backgroundColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                self.darkModeStyle = darkMode;
+            } else {
+                self.darkModeStyle = lightMode;
+            }
+            NSLog(@"只走了一次");
+            return UIColor.whiteColor;
+        }];
+    } else {
+        self.darkModeStyle = lightMode;
     }
 }
 
